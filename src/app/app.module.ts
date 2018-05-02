@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CsgoComponent } from './csgo/csgo.component';
 import { DotaComponent } from './dota/dota.component';
 import { LolComponent } from './lol/lol.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { LolComponent } from './lol/lol.component';
     AppComponent,
     CsgoComponent,
     DotaComponent,
-    LolComponent
+    LolComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule
