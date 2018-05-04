@@ -1,6 +1,7 @@
 .blocktest{
     width:100%;
     height:100vh;
+    overflow: hidden;
 }
 .imageCS{
     background: url('../../assets/cs.jpg') no-repeat center center; 
