@@ -9,6 +9,7 @@ import { LolComponent } from './lol/lol.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeRouterComponent } from './home-router/home-router.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -26,6 +27,7 @@ import { HomeRouterComponent } from './home-router/home-router.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

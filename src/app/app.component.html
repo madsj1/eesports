@@ -1,2 +1,12 @@
-  <app-home-router></app-home-router>
+<header>
+  <nav>
+    <a routerLink="">home</a>
+    <a routerLink="csgo">csgo</a>
+    <a routerLink="dota">dota</a>
+    <a routerLink="lol">lol</a>
+  </nav>
+</header>
 
+<main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
