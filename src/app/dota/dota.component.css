@@ -28,7 +28,7 @@
 .textstyle{
     color:white;
     position: absolute;
-    text-align: center;
+    text-align: left;
     width: 100%;
     z-index: 99;
 }
