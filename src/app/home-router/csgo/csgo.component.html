@@ -1,4 +1,3 @@
-   <div class="blocktest">
-     <p *ngIf="router.url === '/csgo'" class="textstyle" routerLink="">Go back</p>
-     <div [ngClass]="router.url === '/csgo' ? 'imageCSnoA' : 'imageCS'" class="blur"  alt="cs:go | Eesports"></div>
+<div class="blocktest">
+  <div [ngClass]="router.url === '/csgo' ? 'imageCSnoA' : 'imageCS'" class="blur"  alt="cs:go | Eesports"><p *ngIf="router.url === '/csgo'" class="btn btn-dark" routerLink="">Go back</p></div>
 </div>
