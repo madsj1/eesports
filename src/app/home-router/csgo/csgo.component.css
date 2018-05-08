@@ -46,5 +46,11 @@
     z-index: 99;
 }
 
-
+.content{
+    margin-right: 10%;
+    margin-left: 10%;
+    background-color: #181b1f;
+    height: 100%;
+    opacity: 0.98;
+}
 

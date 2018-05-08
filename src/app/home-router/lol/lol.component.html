@@ -1,3 +1,8 @@
 <div class="blocktest">
-    <div [ngClass]="router.url === '/lol' ? 'imageCSnoA' : 'imageCS'" class="blur"  alt="lol | Eesports"><p *ngIf="router.url === '/lol'" class="btn btn-dark" routerLink="">Go back</p></div>
+    <div [ngClass]="router.url === '/lol' ? 'imageCSnoA' : 'imageCS'" class="blur"  alt="lol | Eesports">
+        <p *ngIf="router.url === '/lol'" class="btn btn-dark movebtn" routerLink="">Go back</p>
+        <div *ngIf="router.url === '/lol'" class="content">
+            
+        </div>
+    </div>
 </div> 
