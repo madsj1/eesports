@@ -1,4 +1,4 @@
 <div class="blocktest">
-    <p class="textstyle" routerLink="">Go back</p>
+    <p *ngIf="router.url === '/lol'" class="textstyle" routerLink="">Go back</p>
     <div [ngClass]="router.url === '/lol' ? 'imageCSnoA' : 'imageCS'" class="blur"  alt="lol | Eesports"></div>
 </div> 

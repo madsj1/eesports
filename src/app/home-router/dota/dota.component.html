@@ -1,5 +1,5 @@
 
 <div class="blocktest">
-    <p class="textstyle" routerLink="">Go back</p>
+    <p *ngIf="router.url === '/dota'" class="textstyle" routerLink="">Go back</p>
     <div [ngClass]="router.url === '/dota' ? 'imageCSnoA' : 'imageCS'" class="blur"  alt="dota2 | Eesports"></div>
 </div> 
