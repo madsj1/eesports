@@ -5,14 +5,14 @@
             <span class="navbar-toggler-icon"></span>
           </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <a class="nav-item nav-link" [ngClass]="{'active':routerLink === 'home'}" routerLink="">home</a>
-            <a class="nav-item nav-link" [ngClass]="{'active':routerLink === 'csgo'}" routerLink="csgo">csgo</a>
-            <a class="nav-item nav-link" [ngClass]="{'active':routerLink === 'dota'}" routerLink="dota">dota</a>
-            <a class="nav-item nav-link" [ngClass]="{'active':routerLink === 'lol'}"  routerLink="lol">lol</a>
+            <a class="nav-item nav-link" [ngClass]="{activeSelected:!routerLink}" routerLink="">Home</a>
+            <a class="nav-item nav-link" [ngClass]="{activeSelected:routerLink === 'csgo'}" routerLink="csgo">CS:GO</a>
+            <a class="nav-item nav-link" [ngClass]="{activeSelected:routerLink === 'dota'}" routerLink="dota">Dota 2</a>
+            <a class="nav-item nav-link" [ngClass]="{activeSelected:routerLink === 'lol'}" routerLink="lol">League of Legends</a>
            
-        <ul class="navbar-nav navbar-right">
-            <a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-            <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+        <ul class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="#"> <i class="fas fa-user-plus"></i> Sign up</a>
+            <a class="nav-item nav-link" href="#"> <i class="fas fa-lock"></i> Login</a>
         </ul>
       </div>
     </nav>
