@@ -1,17 +1,18 @@
 <header>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" routerLink="">Everything e-sports</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <a class="nav-item nav-link active" routerLink="">home</a>
-            <a class="nav-item nav-link" routerLink="csgo">csgo</a>
-            <a class="nav-item nav-link" routerLink="dota">dota</a>
-            <a class="nav-item nav-link" routerLink="lol">lol</a>
-        <ul class="navbar-nav navbar-right">
-            <a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-            <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+            <a class="nav-item nav-link" [ngClass]="{activeSelected:!routerLink}" routerLink="">Home</a>
+            <a class="nav-item nav-link" [ngClass]="{activeSelected:routerLink === 'csgo'}" routerLink="csgo">CS:GO</a>
+            <a class="nav-item nav-link" [ngClass]="{activeSelected:routerLink === 'dota'}" routerLink="dota">Dota 2</a>
+            <a class="nav-item nav-link" [ngClass]="{activeSelected:routerLink === 'lol'}" routerLink="lol">League of Legends</a>
+           
+        <ul class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="#"> <i class="fas fa-user-plus"></i> Sign up</a>
+            <a class="nav-item nav-link" href="#"> <i class="fas fa-lock"></i> Login</a>
         </ul>
       </div>
     </nav>
