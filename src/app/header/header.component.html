@@ -13,8 +13,8 @@
             <a class="nav-item nav-link" [ngClass]="router.url === '/dota' ? 'activeSelected' : 'none'"routerLink="dota">Dota 2</a>
             <a class="nav-item nav-link" [ngClass]="router.url === '/lol'  ? 'activeSelected' : 'none'"routerLink="lol">League of Legends</a>
             <ul class="navbar-nav ml-auto">
-            <a class="nav-item nav-link" href="#"> <i class="fas fa-user-plus"></i> Sign up</a>
-            <a class="nav-item nav-link" href="#"> <i class="fas fa-lock"></i> Login</a>
+            <a class="nav-item nav-link" routerLink="/signup"> <i class="fas fa-user-plus"></i> Sign up</a>
+            <a class="nav-item nav-link" routerLink="/login" href="#"> <i class="fas fa-lock"></i> Login</a>
         </ul>
       </div>
     </nav>
