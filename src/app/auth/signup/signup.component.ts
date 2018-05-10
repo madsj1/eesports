@@ -10,12 +10,14 @@ import { FormGroup } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
   signupForm: FormGroup;
+/*   emailAlreadyUsed = ['dovydastt@gmail.com']; */
 
   constructor(private authService: AuthService ) { }
+  
 
   ngOnInit() {
     this.signupForm = new FormGroup({
-      'email': new FormControl(null, [Validators.required,Validators.email]),
+      'email': new FormControl(null, [Validators.required,Validators.email/* , this.forbiddenEmails.bind(this)] */),
       'password': new FormControl(null,[Validators.required,Validators.minLength(6)])
     });
   }
@@ -26,5 +28,12 @@ export class SignupComponent implements OnInit {
     this.authService.signupUser(email,password);
     console.log("user created");
   }
+/* CUSTOM VALIDATOR METHOD
+  forbiddenEmails(control:FormControl):{[s:string]:boolean}{
+    if(this.emailAlreadyUsed.indexOf(control.value) !== -1){
+      return {'EmailIsUsed':true}
+    }
+    return null;
+  } */
 
 }
