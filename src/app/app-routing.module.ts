@@ -7,6 +7,7 @@ import { DotaComponent } from './home-router/dota/dota.component';
 import { LolComponent } from "./home-router/lol/lol.component";
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
+import { AuthBlock } from './auth/auth-block.service';
 
 
 
@@ -18,9 +19,10 @@ export const routes: Routes = [
   { path: '', component: HomeRouterComponent },
   { path: 'csgo', component: CsgoComponent },
   { path: 'dota', component: DotaComponent },
-  { path: 'lol', component: LolComponent },
+  { path: 'lol', component: LolComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent }
+  /* EXAMPLE TO DISABLE ACCESS TO THIS PAGE  { path: 'lol', component: LolComponent, canActivate: [AuthBlock] }, */
 ];
 
 

@@ -1,4 +1,5 @@
 
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,7 +17,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { FormsModule } from '@angular/forms';
 
 import { AuthService } from './auth/auth.service';
-
+import { AuthBlock } from './auth/auth-block.service';
 
 
 
@@ -39,7 +40,7 @@ import { AuthService } from './auth/auth.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,AuthBlock],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

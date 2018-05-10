@@ -4,18 +4,26 @@
         <a class="navbar-brand" *ngIf="router.url === '/csgo'" routerLink="">CS:GO</a>
         <a class="navbar-brand" *ngIf="router.url === '/dota'" routerLink="">Dota</a>
         <a class="navbar-brand" *ngIf="router.url === '/lol'" routerLink="">Leage of Legends</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <a class="nav-item nav-link" [ngClass]="router.url === '/' ? 'activeSelected' : 'none'" routerLink="">Home</a>
             <a class="nav-item nav-link" [ngClass]="router.url === '/csgo' ? 'activeSelected' : 'none'" routerLink="csgo">CS:GO</a>
-            <a class="nav-item nav-link" [ngClass]="router.url === '/dota' ? 'activeSelected' : 'none'"routerLink="dota">Dota 2</a>
-            <a class="nav-item nav-link" [ngClass]="router.url === '/lol'  ? 'activeSelected' : 'none'"routerLink="lol">League of Legends</a>
+            <a class="nav-item nav-link" [ngClass]="router.url === '/dota' ? 'activeSelected' : 'none'" routerLink="dota">Dota 2</a>
+            <a class="nav-item nav-link" [ngClass]="router.url === '/lol'  ? 'activeSelected' : 'none'" routerLink="lol">League of Legends</a>
             <ul class="navbar-nav ml-auto">
-            <a class="nav-item nav-link" routerLink="/signup"> <i class="fas fa-user-plus"></i> Sign up</a>
-            <a class="nav-item nav-link" routerLink="/login" href="#"> <i class="fas fa-lock"></i> Login</a>
-        </ul>
-      </div>
+
+                <ng-template [ngIf]="!authService.isAuthenticated()">
+                    <a class="nav-item nav-link" routerLink="/signup">
+                        <i class="fas fa-user-plus"></i> Sign up</a>
+                    <a class="nav-item nav-link" routerLink="/login">
+                        <i class="fas fa-lock"></i> Login</a>
+                </ng-template>
+                <a *ngIf="authService.isAuthenticated()" (click)="onLogout()" class="nav-item nav-link" routerLink="">
+                        <i class="fas fa-sign-out-alt"></i> Logout</a>
+            </ul>
+        </div>
     </nav>
 </header>
