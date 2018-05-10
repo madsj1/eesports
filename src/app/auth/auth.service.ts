@@ -9,13 +9,25 @@ export class AuthService {
 
     }
 
+    public authChange(): firebase.Unsubscribe {
+        return firebase.auth().onAuthStateChanged(
+          (user: firebase.User) => {
+            if (user) {
+              this.getToken();
+            } else {
+              this.token = null;
+            }
+          }
+        );
+      }
+
     token: string;
     signupUser(email: string, password: string) {
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .catch(
                 error => console.log(error)
             )
-        alert('user was created');
+       
     }
 
     LoginUser(email: string, password: string) {
@@ -50,7 +62,13 @@ export class AuthService {
     Logout() {
         firebase.auth().signOut();
         this.token = null;
+        console.log("logged out")
+        
     }
+
+ 
+
+ 
 
     
 

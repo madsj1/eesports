@@ -14,7 +14,7 @@ import { HomeRouterComponent } from './home-router/home-router.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthService } from './auth/auth.service';
 import { AuthBlock } from './auth/auth-block.service';
@@ -32,13 +32,15 @@ import { AuthBlock } from './auth/auth-block.service';
     HomeRouterComponent,
     SignupComponent,
     LoginComponent,
+ 
    
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService,AuthBlock],
   bootstrap: [AppComponent]
