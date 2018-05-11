@@ -1,6 +1,19 @@
 input.ng-invalid.ng-touched{
-    border:2px solid red;
+    border:2px solid #b9000e;
+    background-image: url('https://image.ibb.co/c9bpmJ/failed.png');
+    background-repeat: no-repeat;
+    -webkit-background-size: 22px 22px;
+    background-size: 22px;
+    background-position: -webkit-calc(100% - 8px) center;
+    background-position: calc(100% - 8px) center;
 }
 input.ng-valid.ng-touched{
     border:2px solid #90EE90;
+    background-image: url('https://image.ibb.co/iYvX6J/success.png');
+    background-repeat: no-repeat;
+    -webkit-background-size: 22px 22px;
+    background-size: 22px;
+    background-position: -webkit-calc(100% - 8px) center;
+    background-position: calc(100% - 8px) center;
 }
+
