@@ -17,16 +17,19 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    firebase.initializeApp({
+  /*   firebase.initializeApp({
       apiKey: "AIzaSyBdJ4RhzcotZaJrKLzXoE9MscYgG6EjtcU",
       authDomain: "eesports-bd33a.firebaseapp.com",
       databaseURL: "https://eesports-bd33a.firebaseio.com",
       projectId: "eesports-bd33a",
       storageBucket: "eesports-bd33a.appspot.com",
       messagingSenderId: "736423362457"
-    });
 
+      
+    }); */
+   
     this.authUnsub = this.authService.authChange();
+    
   }
 
   ngOnDestroy() {

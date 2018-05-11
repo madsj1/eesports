@@ -1,13 +1,41 @@
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { Injectable } from '@angular/core';
+import { AngularFireAuth} from 'angularfire2/auth';
+import { AngularFireDatabase} from 'angularfire2/database';
+
+
 
 @Injectable()
 export class AuthService {
 
-    constructor(private router: Router) {
+ 
+    user$;
+    name = 'Wentox';
 
+    constructor(private router: Router, public afAuth:AngularFireAuth, public af: AngularFireDatabase) {
+        this.user$ = afAuth.authState;
+
+        this.user$.subscribe( us => {
+            if(us){
+              return this.save(us);}
+              return [];
+            }) 
+
+           
+          
     }
+    save(user){
+        console.log(user)
+        this.af.object('users/'+user.uid).update({
+          name:user.displayName,  
+          id: user.uid,
+          email:user.email
+        })
+      
+      }
+
+    
 
     public authChange(): firebase.Unsubscribe {
         return firebase.auth().onAuthStateChanged(
@@ -21,6 +49,9 @@ export class AuthService {
         );
       }
 
+
+
+
       getUserData (){
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
@@ -32,8 +63,7 @@ export class AuthService {
               var isAnonymous = user.isAnonymous;
               var uid = user.uid;
               var providerData = user.providerData;
-
-              console.log('email: '+ email,providerData);
+              console.log(displayName);
               // ...
             } else {
               // User is signed out.
@@ -43,7 +73,12 @@ export class AuthService {
           
       }
 
+     
+     
+
     token: string;
+
+
     signupUser(email: string, password: string) {
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .catch(

@@ -12,3 +12,9 @@ color:#9ebad6;
 .activeSelected{
     color:#9ebad6;
   }
+
+  .text-nick{
+    display: block;
+    padding: .5rem 1rem;
+    color: #d8d8d8;
+  }
