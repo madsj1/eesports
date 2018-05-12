@@ -25,7 +25,14 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { UserprofileComponent } from './auth/login/userprofile/userprofile.component';
 
-
+export const firebaseConfig = {
+      apiKey: "AIzaSyBdJ4RhzcotZaJrKLzXoE9MscYgG6EjtcU",
+      authDomain: "eesports-bd33a.firebaseapp.com",
+      databaseURL: "https://eesports-bd33a.firebaseio.com",
+      projectId: "eesports-bd33a",
+      storageBucket: "eesports-bd33a.appspot.com",
+      messagingSenderId: "736423362457"
+};
 
 
 @NgModule({
@@ -49,14 +56,7 @@ import { UserprofileComponent } from './auth/login/userprofile/userprofile.compo
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp({         
-      apiKey: "AIzaSyBdJ4RhzcotZaJrKLzXoE9MscYgG6EjtcU",
-      authDomain: "eesports-bd33a.firebaseapp.com",
-      databaseURL: "https://eesports-bd33a.firebaseio.com",
-      projectId: "eesports-bd33a",
-      storageBucket: "eesports-bd33a.appspot.com",
-      messagingSenderId: "736423362457"
-    }),                        
+    AngularFireModule.initializeApp(firebaseConfig),                     
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
