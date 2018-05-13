@@ -2,7 +2,13 @@
     <div [ngClass]="router.url === '/csgo' ? 'imageCSnoA' : 'imageCS'" class="blur"  alt="cs:go | Eesports">
         <p *ngIf="router.url === '/csgo'" class="btn btn-dark movebtn" routerLink="">Go back</p>
         <div *ngIf="router.url === '/csgo'" class="content">
-            
+            <table>
+                <tr *ngFor="let post of _postsArray">
+                    <td>
+                        {{post.name}}
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

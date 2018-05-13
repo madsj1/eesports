@@ -1,5 +1,3 @@
-
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthService } from './auth/auth.service';
 import { AuthBlock } from './auth/auth-block.service';
+import {HttpModule} from "@angular/http";
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -40,7 +40,9 @@ import { AuthBlock } from './auth/auth-block.service';
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule,
+    HttpClientModule
   ],
   providers: [AuthService,AuthBlock],
   bootstrap: [AppComponent]
