@@ -9,8 +9,10 @@ import { AuthService } from '../auth/auth.service';
  
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(public router:Router, private authService: AuthService) { }
+info='';
+  constructor(public router:Router, private authService: AuthService) {
+    this.authService.user$.subscribe(info => {this.info = info})
+  }
 
   
 

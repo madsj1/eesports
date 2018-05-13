@@ -19,6 +19,19 @@ import { AuthBlock } from './auth/auth-block.service';
 import {HttpModule} from "@angular/http";
 import { HttpClientModule } from '@angular/common/http';
 
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { UserprofileComponent } from './auth/login/userprofile/userprofile.component';
+
+export const firebaseConfig = {
+      apiKey: "AIzaSyBdJ4RhzcotZaJrKLzXoE9MscYgG6EjtcU",
+      authDomain: "eesports-bd33a.firebaseapp.com",
+      databaseURL: "https://eesports-bd33a.firebaseio.com",
+      projectId: "eesports-bd33a",
+      storageBucket: "eesports-bd33a.appspot.com",
+      messagingSenderId: "736423362457"
+};
 
 
 @NgModule({
@@ -32,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeRouterComponent,
     SignupComponent,
     LoginComponent,
+    UserprofileComponent
  
    
   ],
@@ -42,9 +56,12 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(firebaseConfig),                     
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [AuthService,AuthBlock],
+  providers: [AuthService,AuthBlock,AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

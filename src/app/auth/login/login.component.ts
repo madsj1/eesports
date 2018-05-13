@@ -28,10 +28,6 @@ loginForm:FormGroup;
   this.authservice.getUserData();
  }
 
- retrieveData(){
-       
-
-}
 
 
 

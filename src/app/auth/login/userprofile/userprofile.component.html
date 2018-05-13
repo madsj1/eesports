@@ -1,0 +1,47 @@
+<div class="container d-flex h-100">
+  <div class="row align-self-center w-100">
+    <br>
+    <div class="col-lg-9 col-md-8 col-xs-12 col-sm-12 ml-auto mr-auto edges">
+        <div>
+            <img src="http://smartmamas.com/wp-content/themes/editium/assets/front/img/def_gravatar.png" height="120px" width="120px">
+            <Br><Br>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+        <form [formGroup]="ProfileForm" (ngSubmit)="onSave()">
+          <h3 class="text-center" style="position: relative;
+          top: -12vh;">Edit profile</h3>
+          <br>
+        
+            <div class="form-group row">
+                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                  <input formControlName="name" type="text" class="form-control" id="inputName" placeholder="Name">
+                </div>
+              </div>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input formControlName="email" type="email" class="form-control" id="inputEmail3" placeholder="Email" value="{{info.email}}">
+                <small class="form-text text-muted" *ngIf="!ProfileForm.get('email').valid && ProfileForm.get('email').touched">Please enter a valid email.</small>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input formControlName="password" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                <small class="form-text text-muted" *ngIf="!ProfileForm.get('password').valid && ProfileForm.get('password').touched">Password must be atleast 6 letters/digits</small>
+              </div>
+            </div>
+      <br>
+            <div class="form-group row">
+              <div class="col-xs-12 col-md-12 col-lg-12">
+                <button type="submit" class="btn btn-dark btn-lg btn-block">Save</button>
+              </div>
+            </div>
+          </form>
+    </div>
+  </div>
+
+
+</div>
+

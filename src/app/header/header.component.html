@@ -9,10 +9,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <a class="nav-item nav-link" [ngClass]="router.url === '/'  ? 'activeSelected' : 'none'"  routerLink="">Home</a>
+            <a class="nav-item nav-link" [ngClass]="router.url === '/'  ? 'activeSelected' : 'none'" routerLink="">Home</a>
             <a class="nav-item nav-link" routerLinkActive="activeSelected" routerLink="csgo">CS:GO</a>
-            <a class="nav-item nav-link" routerLinkActive="activeSelected"  routerLink="dota">Dota 2</a>
-            <a class="nav-item nav-link" routerLinkActive="activeSelected"  routerLink="lol">League of Legends</a>
+            <a class="nav-item nav-link" routerLinkActive="activeSelected" routerLink="dota">Dota 2</a>
+            <a class="nav-item nav-link" routerLinkActive="activeSelected" routerLink="lol">League of Legends</a>
             <ul class="navbar-nav ml-auto">
 
                 <ng-template [ngIf]="!authService.isAuthenticated()">
@@ -21,8 +21,24 @@
                     <a class="nav-item nav-link" routerLink="/login">
                         <i class="fas fa-lock"></i> Login</a>
                 </ng-template>
-                <a *ngIf="authService.isAuthenticated()" (click)="onLogout()" class="nav-item nav-link" routerLink="">
-                        <i class="fas fa-sign-out-alt"></i> Logout</a>
+
+
+                <span class="nav-item text-nick" *ngIf="authService.isAuthenticated()">
+                    <img src="http://smartmamas.com/wp-content/themes/editium/assets/front/img/def_gravatar.png" width="30px"
+                        height="30px"> {{info.email}} </span>
+
+
+                <div class="nav-item dropdown show" style="padding-top: 4%;" *ngIf="authService.isAuthenticated()">
+                    <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" routerLink="profile">My Profile</a>
+                        <a class="dropdown-item" (click)="onLogout()" routerLink="">
+                            <i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+
             </ul>
         </div>
     </nav>
