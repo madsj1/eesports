@@ -4,6 +4,7 @@
 - Run 3. `npm install --save jquery`
 - Run 4. `npm install --save angularfire2`
 - Run 5. `npm install --save firebase`
+- Run 6. `npm install ngx-pagination --save`
 
 # Eeesports
 
