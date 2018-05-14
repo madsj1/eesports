@@ -2,13 +2,23 @@
     <div [ngClass]="router.url === '/csgo' ? 'imageCSnoA' : 'imageCS'" class="blur"  alt="cs:go | Eesports">
         <p *ngIf="router.url === '/csgo'" class="btn btn-dark movebtn" routerLink="">Go back</p>
         <div *ngIf="router.url === '/csgo'" class="content">
-            <table>
-                <tr *ngFor="let post of _postsArray">
-                    <td>
-                        {{post.name}}
-                    </td>
-                </tr>
-            </table>
+            <ul class="list-group pagination pagination-sm">
+                <li>
+                    <!--{{post.title}}-->
+                </li>
+                <li class="list-group-item" *ngFor="let post of _postArrayResults | paginate: { itemsPerPage: 10, currentPage: p }">
+                    {{post.team1.name}}
+                    <img src="{{post.team1.crest}}" width="20px" height="20px" alt="{{post.team1.name}}">
+                    {{post.team1.result}}
+                    -
+                    {{post.team2.result}}
+                    <img src="{{post.team2.crest}}" width="20px" height="20px" alt="{{post.team1.name}}">
+                    {{post.team2.name}}
+                    {{post.event}}
+                    {{post.maps}}
+                </li>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </ul>
         </div>
     </div>
 </div>

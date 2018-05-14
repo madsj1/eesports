@@ -24,6 +24,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { UserprofileComponent } from './auth/login/userprofile/userprofile.component';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 export const firebaseConfig = {
       apiKey: "AIzaSyBdJ4RhzcotZaJrKLzXoE9MscYgG6EjtcU",
       authDomain: "eesports-bd33a.firebaseapp.com",
@@ -59,7 +61,8 @@ export const firebaseConfig = {
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),                     
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NgxPaginationModule
   ],
   providers: [AuthService,AuthBlock,AngularFireAuth],
   bootstrap: [AppComponent]
