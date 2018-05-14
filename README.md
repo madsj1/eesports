@@ -1,3 +1,10 @@
+#First step
+Run 1. `npm install` for dependencies
+Run 2. `npm install --save bootstrap`
+Run 3. `npm install --save jquery`
+Run 4. `npm install --save angularfire2`
+Run 5. `npm install --save firebase`
+
 # Eeesports
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
