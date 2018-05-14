@@ -11,7 +11,6 @@ export class AuthService {
 
  
     user$;
-    name = 'Wentox';
 
     constructor(private router: Router, public afAuth:AngularFireAuth, public af: AngularFireDatabase) {
         this.user$ = afAuth.authState;
@@ -28,7 +27,6 @@ export class AuthService {
     save(user){
         console.log(user)
         this.af.object('users/'+user.uid).update({
-          name:user.displayName,  
           id: user.uid,
           email:user.email
         })

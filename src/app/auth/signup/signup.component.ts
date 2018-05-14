@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormControl, Validators } from '@angular/forms';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../shared/auth.service';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
