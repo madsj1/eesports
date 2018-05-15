@@ -27,6 +27,7 @@ import { UserprofileComponent } from './auth/login/userprofile/userprofile.compo
 import { NgxPaginationModule } from 'ngx-pagination';
 import { environment } from '../environments/environment';
 import { UsersService } from './shared/users.service';
+import { CsResultsComponent } from './home-router/csgo/subfolder/cs-results/cs-results.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { UsersService } from './shared/users.service';
     HomeRouterComponent,
     SignupComponent,
     LoginComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    CsResultsComponent
  
    
   ],

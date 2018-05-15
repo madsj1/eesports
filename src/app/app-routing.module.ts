@@ -9,6 +9,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthBlock } from './shared/auth-block.service';
 import { UserprofileComponent } from './auth/login/userprofile/userprofile.component';
+import { CsResultsComponent } from './home-router/csgo/subfolder/cs-results/cs-results.component';
 
 
 
@@ -16,12 +17,16 @@ import { UserprofileComponent } from './auth/login/userprofile/userprofile.compo
 
 
 export const routes: Routes = [
-  
+
   { path: '', component: HomeRouterComponent },
-  { path: 'csgo', component: CsgoComponent },
+  { path: 'csgo', component: CsgoComponent,
+    children: [
+      { path: 'results', component: CsResultsComponent }
+    ]
+  },
   { path: 'dota', component: DotaComponent },
   { path: 'lol', component: LolComponent },
-  { path: 'signup', component: SignupComponent},
+  { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: UserprofileComponent, canActivate: [AuthBlock] }
   /* EXAMPLE TO DISABLE ACCESS TO THIS PAGE  { path: 'lol', component: LolComponent, canActivate: [AuthBlock] }, */
@@ -48,7 +53,7 @@ export const routes: Routes = [
 })
 export class AppRoutingModule {
 
-  
 
- 
+
+
 }

@@ -9,10 +9,12 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <a class="nav-item nav-link" [ngClass]="router.url === '/'  ? 'activeSelected' : 'none'" routerLink="">Home</a>
-            <a class="nav-item nav-link" routerLinkActive="activeSelected" routerLink="csgo">CS:GO</a>
-            <a class="nav-item nav-link" routerLinkActive="activeSelected" routerLink="dota">Dota 2</a>
-            <a class="nav-item nav-link" routerLinkActive="activeSelected" routerLink="lol">League of Legends</a>
+            <a class="nav-item nav-link" [ngClass]="router.url === '/'  ? 'activeSelected' : 'none'" routerLink="">Games</a>
+            <a class="nav-item nav-link" *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="csgo">CS:GO</a>
+               <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo/results">Results</a>
+               <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo"><--</a>
+            <a class="nav-item nav-link"  *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="dota">Dota 2</a>
+            <a class="nav-item nav-link"  *ngIf="router.url === '/'"routerLinkActive="activeSelected" routerLink="lol">League of Legends</a>
             <ul class="navbar-nav ml-auto">
 
                 <ng-template [ngIf]="!authService.isAuthenticated()">

@@ -58,3 +58,22 @@
     opacity: 0.98;
 }
 
+.my-pagination /deep/ .ngx-pagination .current {
+    background: #343a40;
+  }
+
+
+
+.my-pagination /deep/ .ngx-pagination a, .ngx-pagination button {
+    color: white;
+    display: block;
+    padding: 0.1875rem 0.625rem;
+    border-radius: 0;
+}
+.my-pagination /deep/ .ngx-pagination a, .ngx-pagination button:hover {
+ background-color:#343a40;
+}
+
+.my-pagination /deep/ .ngx-pagination {
+    margin-left: -10%;
+}
