@@ -12,9 +12,9 @@ import { MatchService } from './cs.service';
   providers: [MatchService]
 })
 export class CsgoComponent implements OnInit {
-  _postsArray: matches[];
-  _postArray: news[];
   _postArrayResults: results[];
+  _postArray: news[];
+  _postArrayMatches: matches[];
 
   p: number = 1;
   someArray = [];
@@ -31,6 +31,13 @@ export class CsgoComponent implements OnInit {
       
     )
   }
+  getMatches(): void {
+    this.matchService.getAllMatches().subscribe(
+      resultArray => this._postArrayMatches = resultArray,
+      error => console.log("Error :: " + error)
+    )
+  }
+
   getResults(): void {
     this.matchService.getAllResults().subscribe(
       resultArray => this._postArrayResults = resultArray,
