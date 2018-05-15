@@ -1,24 +1,36 @@
 <div class="blocktest">
     <div [ngClass]="router.url === '/csgo' ? 'imageCSnoA' : 'imageCS'" class="blur"  alt="cs:go | Eesports">
         <div *ngIf="router.url === '/csgo'" class="content">
-            <ul class="list-group pagination pagination-xs col-lg-4 w-100 align-items-stretch float-right">
-                <li>
-                    <!--{{post.title}}-->
-                </li>
-             
-                <a href="#" class="list-group-item list-group-item-action text-center d-inline-block" *ngFor="let post of _postArrayResults | paginate: { itemsPerPage: 4, currentPage: p }">
-                    <p><small style="color:black">{{post.event}}</small></p>
-                    {{post.team1.name}}
-                    <img src="{{post.team1.crest}}" width="20px" height="20px" alt="{{post.team1.name}}">
-                   <span style="font-weight: 700" [ngStyle]="{'color':post.team1.result > post.team2.result ? 'green':'red'}"> {{post.team1.result}} </span>
-                    -
-                    <span style="font-weight: 700" [ngStyle]="{'color':post.team2.result > post.team1.result ? 'green':'red'}"> {{post.team2.result}} </span>
-                    <img src="{{post.team2.crest}}" width="20px" height="20px" alt="{{post.team2.name}}">
-                    {{post.team2.name}}
-                    {{post.maps}}
-                </a>
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
-            </ul>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-xs-3">
+                <table class="table table-sm table-hover table-dark text-center">
+                        <thead>
+                          <tr class="text-center">
+                            <th scope="col">Team 1</th>
+                            <th scope="col">Score</th>
+                            <th scope="col">Team 2</th>
+                          </tr>
+                        </thead>
+                      
+                        <tbody>
+                          <tr *ngFor="let post of _postArrayResults | paginate: { itemsPerPage: 8, currentPage: p }">
+                            <td>  <img src="{{post.team1.crest}}" width="20px" height="20px" alt="{{post.team1.name}}">  {{post.team1.name}} </td>
+                            <td><span style="font-weight: 700" [ngStyle]="{'color':post.team1.result > post.team2.result ? 'green':'red'}"> {{post.team1.result}} </span> - 
+                                <span style="font-weight: 700" [ngStyle]="{'color':post.team2.result > post.team1.result ? 'green':'red'}"> {{post.team2.result}} </span>
+                            </td>
+                            <td> <img src="{{post.team2.crest}}" width="20px" height="20px" alt="{{post.team2.name}}"> {{post.team2.name}}</td>
+                          </tr>
+                      
+                        </tbody>
+                      </table>
+                      <pagination-controls  maxSize="3" (pageChange)="p = $event"></pagination-controls>
         </div>
+    </div>
+                
+             
+          
+               
+           
+        </div> <!--CONtENT-->
     </div>
 </div>

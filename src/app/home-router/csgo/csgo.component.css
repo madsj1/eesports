@@ -3,6 +3,9 @@
     height:100%;
    
 }
+.table td {
+    text-align: center;   
+ }
 .imageCS{
     background: url('../../../assets/cs.jpg') no-repeat center center; 
     width:100%;
@@ -19,12 +22,13 @@
 .imageCSnoA{
     background: url('../../../assets/cs.jpg') no-repeat center center; 
     width:100%;
-    height:100%;
+    height:auto;
     background-size: cover;
     -ms-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
+    object-fit:cover;
 }
 
 .blur{
@@ -47,10 +51,10 @@
 }
 
 .content{
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-right: 8%;
+    margin-left: 8%;
     background-color: #181b1f;
-    height: 100%;
+    height: auto;
     opacity: 0.98;
 }
 
