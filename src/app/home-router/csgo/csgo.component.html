@@ -1,22 +1,22 @@
 <div class="blocktest">
     <div [ngClass]="router.url === '/csgo' ? 'imageCSnoA' : 'imageCS'" class="blur"  alt="cs:go | Eesports">
-        <p *ngIf="router.url === '/csgo'" class="btn btn-dark movebtn" routerLink="">Go back</p>
         <div *ngIf="router.url === '/csgo'" class="content">
-            <ul class="list-group pagination pagination-sm">
+            <ul class="list-group pagination pagination-xs col-lg-4 w-100 align-items-stretch float-right">
                 <li>
                     <!--{{post.title}}-->
                 </li>
-                <li class="list-group-item" *ngFor="let post of _postArrayResults | paginate: { itemsPerPage: 10, currentPage: p }">
+             
+                <a href="#" class="list-group-item list-group-item-action text-center d-inline-block" *ngFor="let post of _postArrayResults | paginate: { itemsPerPage: 4, currentPage: p }">
+                    <p><small style="color:black">{{post.event}}</small></p>
                     {{post.team1.name}}
                     <img src="{{post.team1.crest}}" width="20px" height="20px" alt="{{post.team1.name}}">
-                    {{post.team1.result}}
+                   <span style="font-weight: 700" [ngStyle]="{'color':post.team1.result > post.team2.result ? 'green':'red'}"> {{post.team1.result}} </span>
                     -
-                    {{post.team2.result}}
-                    <img src="{{post.team2.crest}}" width="20px" height="20px" alt="{{post.team1.name}}">
+                    <span style="font-weight: 700" [ngStyle]="{'color':post.team2.result > post.team1.result ? 'green':'red'}"> {{post.team2.result}} </span>
+                    <img src="{{post.team2.crest}}" width="20px" height="20px" alt="{{post.team2.name}}">
                     {{post.team2.name}}
-                    {{post.event}}
                     {{post.maps}}
-                </li>
+                </a>
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </ul>
         </div>
