@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit,  } from '@angular/core';
 import { fadeAnimation } from './animation';
 import { RouterModule, Routes } from '@angular/router';
 import * as firebase from 'firebase';
-import { AuthService } from './auth/auth.service';
+import { AuthService } from './shared/auth.service';
 
 
 @Component({

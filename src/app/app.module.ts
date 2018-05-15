@@ -14,8 +14,8 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AuthService } from './auth/auth.service';
-import { AuthBlock } from './auth/auth-block.service';
+import { AuthService } from './shared/auth.service';
+import { AuthBlock } from './shared/auth-block.service';
 import {HttpModule} from "@angular/http";
 import { HttpClientModule } from '@angular/common/http';
 
@@ -25,15 +25,8 @@ import { AngularFireModule } from 'angularfire2';
 import { UserprofileComponent } from './auth/login/userprofile/userprofile.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
-
-export const firebaseConfig = {
-      apiKey: "AIzaSyBdJ4RhzcotZaJrKLzXoE9MscYgG6EjtcU",
-      authDomain: "eesports-bd33a.firebaseapp.com",
-      databaseURL: "https://eesports-bd33a.firebaseio.com",
-      projectId: "eesports-bd33a",
-      storageBucket: "eesports-bd33a.appspot.com",
-      messagingSenderId: "736423362457"
-};
+import { environment } from '../environments/environment';
+import { UsersService } from './shared/users.service';
 
 
 @NgModule({
@@ -59,12 +52,12 @@ export const firebaseConfig = {
     ReactiveFormsModule,
     HttpModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(firebaseConfig),                     
+    AngularFireModule.initializeApp(environment.firebaseConfig),                   
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgxPaginationModule
   ],
-  providers: [AuthService,AuthBlock,AngularFireAuth],
+  providers: [AuthService,AuthBlock,AngularFireAuth,UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

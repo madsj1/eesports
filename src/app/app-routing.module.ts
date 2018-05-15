@@ -7,7 +7,7 @@ import { DotaComponent } from './home-router/dota/dota.component';
 import { LolComponent } from "./home-router/lol/lol.component";
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
-import { AuthBlock } from './auth/auth-block.service';
+import { AuthBlock } from './shared/auth-block.service';
 import { UserprofileComponent } from './auth/login/userprofile/userprofile.component';
 
 
