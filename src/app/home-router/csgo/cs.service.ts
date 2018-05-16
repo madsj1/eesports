@@ -28,6 +28,10 @@ export interface results {
   stars: number;
 }
 
+export interface rankings{
+  
+}
+
 @Injectable()
 export class MatchService {
   constructor(private http: HttpClient) {}  

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { matches } from "./cs.service"
+import { matches, MatchService } from './cs.service';
 import { news } from "./cs.service"
 import { results } from "./cs.service";
-import { MatchService } from './cs.service';
+
 
 @Component({
   selector: 'app-csgo',
@@ -44,6 +44,8 @@ export class CsgoComponent implements OnInit {
       error => console.log("Error :: " + error)
     )
   }
+
+
   /*
   getMatches(): void {
     this.matchService.getAllMatches()
