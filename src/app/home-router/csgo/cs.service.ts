@@ -41,7 +41,7 @@ export class MatchService {
   }
 
   getAllResults(): Observable<results[]>{
-    return this.http.get<results[]>('http://localhosy:3000/results')
+    return this.http.get<results[]>('http://localhost:3000/results')
   }
   
 /*

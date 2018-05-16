@@ -55,6 +55,7 @@ export class CsgoComponent implements OnInit {
 
   ngOnInit() {
     this.getNews();
+    this.getMatches();
     this.getResults();
   }
 
