@@ -28,8 +28,20 @@ export interface results {
   stars: number;
 }
 
-export interface rankings{
-  
+export interface ranking{
+  points: string;
+  place: string;
+  team: {name: string; id: string;}
+  change: string;
+  isNew: boolean;
+}
+
+export interface streams{
+  name: string;
+  category: string;
+  country: {name: string; code: string;}
+  viewers: string;
+  hltvLink: string;
 }
 
 @Injectable()
@@ -46,6 +58,14 @@ export class MatchService {
 
   getAllResults(): Observable<results[]>{
     return this.http.get<results[]>('http://localhost:3000/results')
+  }
+
+  getRanking(): Observable<ranking[]>{
+    return this.http.get<ranking[]>('http://localhost:3000/ranking')
+  }
+
+  getStreams(): Observable<streams[]>{
+    return this.http.get<streams[]>('http://localhost:3000/streams')
   }
   
 /*
