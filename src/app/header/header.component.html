@@ -12,7 +12,7 @@
             <a class="nav-item nav-link" [ngClass]="router.url === '/'  ? 'activeSelected' : 'none'" routerLink="">Games</a>
             <a class="nav-item nav-link" *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="csgo">CS:GO</a>
                <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo/results">Results</a>
-               <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo"><--</a>
+               <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
             <a class="nav-item nav-link"  *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="dota">Dota 2</a>
             <a class="nav-item nav-link"  *ngIf="router.url === '/'"routerLinkActive="activeSelected" routerLink="lol">League of Legends</a>
             <ul class="navbar-nav ml-auto">

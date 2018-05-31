@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { matches, MatchService } from './cs.service';
+import { matches, MatchService, results } from './cs.service';
 import { news } from "./cs.service"
-import { results } from "./cs.service";
+
 
 
 @Component({
   selector: 'app-csgo',
   templateUrl: './csgo.component.html',
-  styleUrls: ['./csgo.component.css'],
-  providers: [MatchService]
+  styleUrls: ['./csgo.component.css']
+
 })
 export class CsgoComponent implements OnInit {
   _postArrayResults: results[];

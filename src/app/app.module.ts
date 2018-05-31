@@ -1,13 +1,20 @@
+import { MatchService } from './home-router/csgo/cs.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+/* CSGO Pages */
 import { CsgoComponent } from './home-router/csgo/csgo.component';
+import { CsResultsComponent } from './home-router/csgo/cs-results/cs-results.component';
+/* Dota Pages */
 import { DotaComponent } from './home-router/dota/dota.component';
+/* League Pages */
 import { LolComponent } from './home-router/lol/lol.component';
+/* html templates */
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+
 import { HomeRouterComponent } from './home-router/home-router.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -27,7 +34,7 @@ import { UserprofileComponent } from './auth/login/userprofile/userprofile.compo
 import { NgxPaginationModule } from 'ngx-pagination';
 import { environment } from '../environments/environment';
 import { UsersService } from './shared/users.service';
-import { CsResultsComponent } from './home-router/csgo/subfolder/cs-results/cs-results.component';
+
 
 
 @NgModule({
@@ -59,7 +66,7 @@ import { CsResultsComponent } from './home-router/csgo/subfolder/cs-results/cs-r
     AngularFireAuthModule,
     NgxPaginationModule
   ],
-  providers: [AuthService,AuthBlock,AngularFireAuth,UsersService],
+  providers: [AuthService,AuthBlock,AngularFireAuth,UsersService,MatchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
