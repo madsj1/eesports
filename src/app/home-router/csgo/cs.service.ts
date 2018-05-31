@@ -44,6 +44,10 @@ export interface streams{
   hltvLink: string;
 }
 
+export interface match{
+
+}
+
 @Injectable()
 export class MatchService {
   constructor(private http: HttpClient) {}  
@@ -66,6 +70,10 @@ export class MatchService {
 
   getStreams(): Observable<streams[]>{
     return this.http.get<streams[]>('http://localhost:3000/streams')
+  }
+
+  getMatch(): Observable<match[]>{
+    return this.http.get<match[]>('http://localhost:3000/matches/')
   }
   
 /*
