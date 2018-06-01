@@ -16,7 +16,6 @@ export class CsResultsComponent implements OnInit {
   collection: results[] = this.someArray;
 
   constructor(public router:Router, private matchService: MatchService) {
-    
   }
 
   getResults(): void {
