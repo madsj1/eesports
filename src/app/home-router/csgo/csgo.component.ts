@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { matches, MatchService, results, ranking, streams } from './cs.service';
+import { matches, MatchService, results, ranking, streams, match } from './cs.service';
 import { news } from "./cs.service"
 
 
@@ -16,6 +16,7 @@ export class CsgoComponent implements OnInit {
   _postArrayMatches: matches[];
   _postArrayRanking: ranking[];
   _postArrayStreams: streams[];
+  _postArrayMatch: match[];
 
   p: number = 1;
   someArray = [];
@@ -59,6 +60,13 @@ export class CsgoComponent implements OnInit {
     )
   }
 
+  getMatch(): void {
+    this.matchService.getMatch().subscribe(
+      resultArray => this._postArrayMatch = resultArray,
+      error => console.log("Error :: " + error)
+    )
+  }
+
 
   /*
   getMatches(): void {
@@ -75,6 +83,7 @@ export class CsgoComponent implements OnInit {
     this.getResults();
     this.getRanking();
     this.getStreams();
+    this.getMatch();
   }
 
 }
