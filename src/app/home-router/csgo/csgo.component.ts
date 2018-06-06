@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { matches, MatchService, results } from './cs.service';
+import { matches, MatchService, results, ranking, streams, match } from './cs.service';
 import { news } from "./cs.service"
-
 
 
 @Component({
@@ -15,6 +14,9 @@ export class CsgoComponent implements OnInit {
   _postArrayResults: results[];
   _postArray: news[];
   _postArrayMatches: matches[];
+  _postArrayRanking: ranking[];
+  _postArrayStreams: streams[];
+  _postArrayMatch: match[];
 
   p: number = 1;
   someArray = [];
@@ -28,7 +30,6 @@ export class CsgoComponent implements OnInit {
     this.matchService.getAllNews().subscribe(
       resultArray => this._postArray = resultArray,
       error => console.log("Error :: " + error)
-      
     )
   }
   getMatches(): void {
@@ -41,6 +42,27 @@ export class CsgoComponent implements OnInit {
   getResults(): void {
     this.matchService.getAllResults().subscribe(
       resultArray => this._postArrayResults = resultArray,
+      error => console.log("Error :: " + error)
+    )
+  }
+
+  getRanking(): void {
+    this.matchService.getRanking().subscribe(
+      resultArray => this._postArrayRanking = resultArray,
+      error => console.log("Error :: " + error)
+    )
+  }
+
+  getStreams(): void {
+    this.matchService.getStreams().subscribe(
+      resultArrayn => this._postArrayStreams = resultArrayn,
+      error => console.log("Error :: " + error)
+    )
+  }
+
+  getMatch(): void {
+    this.matchService.getMatch().subscribe(
+      resultArray => this._postArrayMatch = resultArray,
       error => console.log("Error :: " + error)
     )
   }
@@ -58,6 +80,9 @@ export class CsgoComponent implements OnInit {
   ngOnInit() {
     this.getNews();
     this.getResults();
+    this.getRanking();
+    this.getStreams();
+    this.getMatch();
   }
 
 }
