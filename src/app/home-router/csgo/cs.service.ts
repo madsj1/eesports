@@ -46,13 +46,22 @@ export interface streams{
 }
 
 export interface match{
-  team1:{}
-  team2:{}
+  team1:{
+    name:string,
+    id:number
+  }
+  team2:{
+    name:string,
+    id:number
+  }
   winnerTeam:{}
   date: string;
   format: string;
   additionalInfo: string;
-  event: {}
+  event: {
+    name:string,
+    id:number
+  }
   maps: [{}];
   players: {team1:[{name1:string; id1:number; name2:string; id2:number; name3:string; id3:number; name4:string; id4:number; name5:string; id5:number;}];
             team2:[{name1:string; id1:number; name2:string; id2:number; name3:string; id3:number; name4:string; id4:number; name5:string; id5:number;}]}
@@ -99,8 +108,8 @@ export class MatchService {
     return this.http.get<streams[]>('http://localhost:3000/streams')
   }
 
-  getMatch(): Observable<match[]>{
-    return this.http.get<match[]>('http://localhost:3000/matches/')
+  getMatch(id:number): Observable<match[]>{
+    return this.http.get<match[]>(`http://localhost:3000/match/${id}`)
   }
   
 /*
