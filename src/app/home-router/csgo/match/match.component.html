@@ -2,8 +2,26 @@
   match works!
 </p>
 
+   
+<hr>
+      
+<div>
+    Team1: {{ _postArrayMatch.team1.name}}
+  </div>
 
+  <div>
+      <img alt="Astralis" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team1.id}}" height="50" width="50" class="logo" title="" style="" alt="{{ _postArrayMatch.team1.name}}">
+    
+    </div>
 
-      <div *ngFor="let post of _postArrayMatch">
-        <p>{{post.team1.name}}</p>
-      </div>
+    <hr>
+      
+<div>
+    Team2: {{ _postArrayMatch.team2.name}}
+  </div>
+
+  <div>
+      <img alt="Astralis" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team2.id}}" height="50" width="50" class="logo" title="" style="" alt="{{ _postArrayMatch.team2.name}}">
+    
+    </div>
+

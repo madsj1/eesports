@@ -7,8 +7,11 @@ import { MatchService, match } from '../cs.service';
   templateUrl: './match.component.html',
   styleUrls: ['./match.component.css']
 })
+
+
 export class MatchComponent implements OnInit {
   _postArrayMatch: match[];
+  
   
   constructor(public router:Router, private matchService: MatchService, private route: ActivatedRoute) {
     
@@ -26,6 +29,8 @@ export class MatchComponent implements OnInit {
    this.getMatchId();
   }
 
+  
+
    getMatchId() :void {
     this.route.params.forEach((params: Params)=> {
       let id = +params['id'];
@@ -35,5 +40,7 @@ export class MatchComponent implements OnInit {
       )
     })
    }
+
+ 
 
 }

@@ -25,8 +25,6 @@ export interface results {
   team2: {id: string; name: string;}
   result: string;
   event: {name: string; id: string;}
-  format: string;
-  stars: number;
 }
 
 export interface ranking{
@@ -46,27 +44,47 @@ export interface streams{
 }
 
 export interface match{
-  team1:{
-    name:string,
-    id:number
+  team1: {
+    name:string;
+    id:number;
+  };
+ /*  team2:{
+    name:string;
+    id:number;
   }
-  team2:{
-    name:string,
-    id:number
+  winnerTeam:{
+    name:string;
+    id:number;
   }
-  winnerTeam:{}
   date: string;
   format: string;
   additionalInfo: string;
   event: {
-    name:string,
-    id:number
+    name:string;
+    id:number;
   }
-  maps: [{}];
-  players: {team1:[{name1:string; id1:number; name2:string; id2:number; name3:string; id3:number; name4:string; id4:number; name5:string; id5:number;}];
-            team2:[{name1:string; id1:number; name2:string; id2:number; name3:string; id3:number; name4:string; id4:number; name5:string; id5:number;}]}
-  streams:[{}];
-  live: string;
+  maps: [
+    {
+      name:string;
+      result:string;
+    }
+  ];
+  players: {
+    team1:[
+      {name:string; id:number;}
+    ];
+    team2:[
+      {name:string; id:number;}
+    ];
+    }
+  streams:[{
+    name: string;
+    category: string;
+    country: {name: string; code: string;}
+    viewers: string;
+    hltvLink: string;
+  }];
+  live: boolean;
   hasScorebot: boolean;
   highlightedPlayer: {name:string; id:number}
   headToHead:[{date:string;
@@ -75,13 +93,15 @@ export interface match{
               map:string;
               result:string;
               }];
-  vetos:[{team1:{name:string; id:number;}
+  vetos:[
+    {
+      team:{
+        name:string;
+        id:number;}
           map:string;
           type:string;
-          team2:{name:string; id:number;}
-          map1:string;
-          type1:string;}];
-  highlights:[{}];
+  }];
+  highlights:[{}]; */
 }
 
 @Injectable()
