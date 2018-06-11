@@ -10,6 +10,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthBlock } from './shared/auth-block.service';
 import { UserprofileComponent } from './auth/login/userprofile/userprofile.component';
 import { CsResultsComponent } from './home-router/csgo/cs-results/cs-results.component';
+import { MatchComponent } from './home-router/csgo/match/match.component';
 
 
 
@@ -19,6 +20,7 @@ import { CsResultsComponent } from './home-router/csgo/cs-results/cs-results.com
 export const routes: Routes = [
 
   { path: '', component: HomeRouterComponent },
+  { path: 'match/:id', component:MatchComponent},
   { path: 'csgo', component: CsgoComponent},
   { path: 'csgo/results', component: CsResultsComponent},
   /*   children: [

@@ -11,9 +11,9 @@ import { matches, MatchService, results } from '../cs.service';
 export class CsResultsComponent implements OnInit {
   _postArrayResults: results[];
 
-  p: number = 1;
+ /*  p: number = 1;
   someArray = [];
-  collection: results[] = this.someArray;
+  collection: results[] = this.someArray; */
 
   constructor(public router:Router, private matchService: MatchService) {
   }
@@ -27,6 +27,10 @@ export class CsResultsComponent implements OnInit {
 
   ngOnInit() {
     this.getResults();
+  }
+
+  selectId(id){
+    this.router.navigate(['/match', id]);
   }
 
 }

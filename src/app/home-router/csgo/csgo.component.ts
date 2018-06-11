@@ -18,9 +18,9 @@ export class CsgoComponent implements OnInit {
   _postArrayStreams: streams[];
   _postArrayMatch: match[];
 
-  p: number = 1;
+/*   p: number = 1;
   someArray = [];
-  collection: results[] = this.someArray;
+  collection: results[] = this.someArray; */
 
   constructor(public router:Router, private matchService: MatchService) {
     
@@ -44,6 +44,7 @@ export class CsgoComponent implements OnInit {
       resultArray => this._postArrayResults = resultArray,
       error => console.log("Error :: " + error)
     )
+   
   }
 
   getRanking(): void {
@@ -60,12 +61,7 @@ export class CsgoComponent implements OnInit {
     )
   }
 
-  getMatch(): void {
-    this.matchService.getMatch().subscribe(
-      resultArray => this._postArrayMatch = resultArray,
-      error => console.log("Error :: " + error)
-    )
-  }
+
 
 
   /*
@@ -82,7 +78,8 @@ export class CsgoComponent implements OnInit {
     this.getResults();
     this.getRanking();
     this.getStreams();
-    this.getMatch();
+  
+    
   }
 
 }

@@ -15,7 +15,7 @@
                         </thead>
 
                         <tbody>
-                            <tr *ngFor="let post of _postArrayResults | paginate: { itemsPerPage: 10, currentPage: p }">
+                            <tr *ngFor="let post of _postArrayResults | paginate: { itemsPerPage: 10, currentPage: p } " (click)="selectId(post.id)">
                                 <td class="name-align">
                                         <div class="items-align team1">
                                             <div class="textShrink">{{post.team1.name}}</div>
