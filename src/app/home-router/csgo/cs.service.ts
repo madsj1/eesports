@@ -48,7 +48,7 @@ export interface match{
     name:string;
     id:number;
   };
- /*  team2:{
+  team2:{
     name:string;
     id:number;
   }
@@ -101,7 +101,7 @@ export interface match{
           map:string;
           type:string;
   }];
-  highlights:[{}]; */
+  highlights:[{}];
 }
 
 @Injectable()

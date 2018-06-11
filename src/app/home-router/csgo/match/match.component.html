@@ -10,7 +10,7 @@
   </div>
 
   <div>
-      <img alt="Astralis" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team1.id}}" height="50" width="50" class="logo" title="" style="" alt="{{ _postArrayMatch.team1.name}}">
+      <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team1.id}}" height="50" width="50" class="logo"  alt="{{ _postArrayMatch.team1.name}}">
     
     </div>
 
@@ -21,7 +21,9 @@
   </div>
 
   <div>
-      <img alt="Astralis" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team2.id}}" height="50" width="50" class="logo" title="" style="" alt="{{ _postArrayMatch.team2.name}}">
+      <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team2.id}}" height="50" width="50" class="logo" alt="{{ _postArrayMatch.team2.name}}">
     
     </div>
-
+    {{ _postArrayMatch.maps[0].name}}
+    <Br>
+    {{ _postArrayMatch.maps[0].result}}
