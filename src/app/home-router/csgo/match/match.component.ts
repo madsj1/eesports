@@ -17,23 +17,14 @@ export class MatchComponent implements OnInit {
     
   }
 
-
-/*   getMatchId(): void {
-    this.matchService.getMatch(id).subscribe(
-      resultArray => this._postArrayMatch = resultArray,
-      error => console.log("Error :: " + error)
-    )
-  } */
-
   ngOnInit(){
    this.getMatchId();
   }
 
-  
-
    getMatchId() :void {
     this.route.params.forEach((params: Params)=> {
       let id = +params['id'];
+      
       this.matchService.getMatch(id).subscribe(
         resultArray => this._postArrayMatch = resultArray,
         error => console.log("Error ::" + error)

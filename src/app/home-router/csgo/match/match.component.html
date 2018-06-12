@@ -1,7 +1,3 @@
-<p>
-  match works!
-</p>
-
    
 <hr>
       
@@ -22,8 +18,20 @@
 
   <div>
       <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team2.id}}" height="50" width="50" class="logo" alt="{{ _postArrayMatch.team2.name}}">
-    
     </div>
-    {{ _postArrayMatch.maps[0].name}}
+
+   Date: {{ _postArrayMatch.date | date:mediumDate }} <br>
+   <hr>
+   Map1: {{ _postArrayMatch.maps[0].name}}
     <Br>
-    {{ _postArrayMatch.maps[0].result}}
+   result1: {{ _postArrayMatch.maps[0].result}}
+
+   <hr>
+   Map2: {{ _postArrayMatch.maps[1].name}}
+    <Br>
+   result2: {{ _postArrayMatch.maps[1].result}}
+
+   <hr>
+   Map3: {{ _postArrayMatch.maps[2].name}}
+    <Br>
+   result3: {{ _postArrayMatch.maps[2].result}}

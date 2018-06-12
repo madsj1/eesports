@@ -2,9 +2,9 @@
     <div class="blur imageCSnoA" alt="cs:go | Eesports">
         <div class="content">
             <div class="row justify-content-md-center">
-                <div class="col-md-7 col-sm-12">
+                <div class="col-md-12 col-sm-12">
 
-                    <table style="margin-top:10%;" class="table table-sm table-hover table-dark text-center">
+                    <table style="margin-top:10%;" class="table  table-hover table-dark text-center">
                         <thead>
                             <tr class="text-center">
 
@@ -15,23 +15,24 @@
                         </thead>
 
                         <tbody>
-                            <tr *ngFor="let post of _postArrayResults | paginate: { itemsPerPage: 10, currentPage: p } " (click)="selectId(post.id)">
+                            <tr *ngFor="let post of _postArrayResults | paginate: { itemsPerPage: 10, currentPage: p } " (click)="selectId(post.id)" style="cursor: pointer;">
                                 <td class="name-align">
                                         <div class="items-align team1">
                                             <div class="textShrink">{{post.team1.name}}</div>
-                                            <img src="https://static.hltv.org/images/team/logo/{{post.team1.id}}" width="20px" height="20px" alt="{{post.team1.name}}">
+                                            <img src="https://static.hltv.org/images/team/logo/{{post.team1.id}}" width="35px" height="35px" alt="{{post.team1.name}}">
                                         </div>
                                         
                                 </td>
                                
                                 <td class="resultScore">
+                                        <!-- <span  [ngStyle]="{'color':post.result |  >= 16 ? 'green' : 'red'}">{{post.result | slice:0:2}}</span> -->
                                     <span  [ngStyle]="">{{post.result | slice:0:2}}</span> -
                                     <span  [ngStyle]="">{{post.result | slice:4:7}}</span>
                                 </td>
 
                                 <td class="name-align">
                                         <div class="items-align team2">
-                                            <img src="https://static.hltv.org/images/team/logo/{{post.team2.id}}" width="20px" height="20px" alt="{{post.team2.name}}">
+                                            <img src="https://static.hltv.org/images/team/logo/{{post.team2.id}}" width="35px" height="35px" alt="{{post.team2.name}}">
                                             <div class="textShrink">{{post.team2.name}}</div>
                                         </div>
                                 </td>
