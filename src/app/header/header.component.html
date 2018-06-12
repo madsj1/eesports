@@ -1,20 +1,34 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" *ngIf="router.url === '/'" routerLink="">Everything e-sports</a>
-        <a class="navbar-brand" *ngIf="router.url === '/csgo'" routerLink="">CS:GO</a>
-        <a class="navbar-brand" *ngIf="router.url === '/dota'" routerLink="">Dota</a>
-        <a class="navbar-brand" *ngIf="router.url === '/lol'" routerLink="">Leage of Legends</a>
+        <a class="navbar-brand" *ngIf="router.url === '/'" routerLink=""><img class="logo" src="../../assets/logo.png"></a>
+        <a class="navbar-brand" *ngIf="router.url === '/csgo'" routerLink=""><img class="logo" src="../../assets/logo.png"></a>
+        <a class="navbar-brand" *ngIf="router.url === '/csgo/results'" routerLink=""><img class="logo" src="../../assets/logo.png"></a>
+        <a class="navbar-brand" *ngIf="router.url === '/csgo/ranking'" routerLink=""><img class="logo" src="../../assets/logo.png"></a>
+        <a class="navbar-brand" *ngIf="router.url === '/dota'" routerLink=""><img class="logo" src="../../assets/logo.png"></a>
+        <a class="navbar-brand" *ngIf="router.url === '/lol'" routerLink=""><img class="logo" src="../../assets/logo.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <a class="nav-item nav-link" [ngClass]="router.url === '/'  ? 'activeSelected' : 'none'" routerLink="">Games</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="csgo">CS:GO</a>
+
+            <a class="nav-item nav-link" *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="csgo"><img src="../../assets/CSGO_logo.png" width="40px" height="40px"></a>
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo"><img src="../../assets/CSGO_logo.png" width="40px" height="40px"></a>
                <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo/results">Results</a>
-               <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-            <a class="nav-item nav-link"  *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="dota">Dota 2</a>
-            <a class="nav-item nav-link"  *ngIf="router.url === '/'"routerLinkActive="activeSelected" routerLink="lol">League of Legends</a>
+               <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo"><img src="../../assets/CSGO_logo.png" width="40px" height="40px"></a>
+               <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo/results">Results</a>
+               <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo/ranking">World Ranking</a>
+               <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo/ranking">World Ranking</a>
+               <a class="nav-item nav-link" *ngIf="router.url === '/csgo/ranking'" routerLink="csgo"><img src="../../assets/CSGO_logo.png" width="40px" height="40px"></a>
+               <a class="nav-item nav-link" *ngIf="router.url === '/csgo/ranking'" routerLink="csgo/results">Results</a>
+               <a class="nav-item nav-link" *ngIf="router.url === '/csgo/ranking'" routerLink="csgo/ranking">World Ranking</a>
+
+            <a class="nav-item nav-link"  *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="dota"><img src="../../assets/Dota2_logo.png" width="60px" height="40px"></a>
+                <a class="nav-item nav-link" *ngIf="router.url === '/dota'" routerLink="dota"><img src="../../assets/Dota2_logo.png" width="60px" height="40px"></a>
+                
+            <a class="nav-item nav-link"  *ngIf="router.url === '/'"routerLinkActive="activeSelected" routerLink="lol"><img src="../../assets/lol_logo.png" width="90px" height="40px"></a>
+                <a class="nav-item nav-link" *ngIf="router.url === '/lol'" routerLink="lol"><img src="../../assets/lol_logo.png" width="90px" height="40px"></a>
             <ul class="navbar-nav ml-auto">
 
                 <ng-template [ngIf]="!authService.isAuthenticated()">

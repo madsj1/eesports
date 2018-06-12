@@ -35,6 +35,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { environment } from '../environments/environment';
 import { UsersService } from './shared/users.service';
 import { MatchComponent } from './home-router/csgo/match/match.component';
+import { RankingComponent } from './home-router/csgo/ranking/ranking.component';
 
 
 
@@ -51,7 +52,8 @@ import { MatchComponent } from './home-router/csgo/match/match.component';
     LoginComponent,
     UserprofileComponent,
     CsResultsComponent,
-    MatchComponent
+    MatchComponent,
+    RankingComponent
  
    
   ],
