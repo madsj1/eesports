@@ -1,37 +1,68 @@
-   
-<hr>
-      
-<div>
-    Team1: {{ _postArrayMatch.team1.name}}
-  </div>
+<div class="container-fluid">
+  
 
-  <div>
-      <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team1.id}}" height="50" width="50" class="logo"  alt="{{ _postArrayMatch.team1.name}}">
+   <!--  <div class="col-md-12"> -->
+        <div class="box-holder">
+            <div class="row">
+          <div class="col-4 align-items">
+          <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team1.id}}" height="100" width="100" class="logo" alt="{{ _postArrayMatch.team1.name}}">
+          <p>{{ _postArrayMatch.team1.name }}</p> 
+          </div>
+
+          <div class="col-4 align-items">
+            <h4 style="color: #0ca2cf;">{{ _postArrayMatch.event.name }}</h4>
+            <p>{{ _postArrayMatch.format }}</p>
+            <p>{{ _postArrayMatch.date | date:mediumDate }}</p>
+            <p>{{ _postArrayMatch.date | date:'shortTime' }}</p>
+            <p *ngIf="_postArrayMatch.live == false">Match over</p>
+            <p *ngIf="_postArrayMatch.live == true">Live</p>
+          </div>
+         
+          <div class="col-4 align-items">
+              <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team2.id}}" height="100" width="100" class="logo" alt="{{ _postArrayMatch.team2.name}}">
+              <p>{{ _postArrayMatch.team2.name}}</p> 
+          </div>
+
+          </div>
+        <!-- </div> -->
+    </div>
+
+    <br><br>
+          
+      <ul *ngFor="let map of _postArrayMatch.maps" [ngSwitch]="map.name">
+        <li *ngSwitchCase="'inf'">
+          <div>Inferno</div>
+          <img src="../../../../assets/csgo_maps/inferno.jpg"> {{ map.result }}
+        </li>
+        <li *ngSwitchCase="'nuke'">
+          <img src="../../../../assets/csgo_maps/nuke.jpg"> {{ map.result }}
+        </li>
+        <li *ngSwitchCase="'cch'">
+          <img src="../../../../assets/csgo_maps/cache.png"> {{ map.result }}
+        </li>
+        <li *ngSwitchCase="'mrg'">
+          <div>Mirage</div>
+          <img src="../../../../assets/csgo_maps/mirage.png"> {{ map.result }}
+        </li>
+        <li *ngSwitchCase="'ovp'">
+          <img src="../../../../assets/csgo_maps/overpass.png"> {{ map.result }}
+        </li>
+        <li *ngSwitchCase="'trn'">
+          <img src="../../../../assets/csgo_maps/train.png"> {{ map.result }}
+        </li>
+        <li *ngSwitchCase="'d2'">
+          <img src="../../../../assets/csgo_maps/dust2.png"> {{ map.result }}
+        </li>
+      
+      
+      </ul>
+
+  </div>
     
-    </div>
-
-    <hr>
       
-<div>
-    Team2: {{ _postArrayMatch.team2.name}}
-  </div>
 
-  <div>
-      <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team2.id}}" height="50" width="50" class="logo" alt="{{ _postArrayMatch.team2.name}}">
-    </div>
 
-   Date: {{ _postArrayMatch.date | date:mediumDate }} <br>
-   <hr>
-   Map1: {{ _postArrayMatch.maps[0].name}}
-    <Br>
-   result1: {{ _postArrayMatch.maps[0].result}}
 
-   <hr>
-   Map2: {{ _postArrayMatch.maps[1].name}}
-    <Br>
-   result2: {{ _postArrayMatch.maps[1].result}}
 
-   <hr>
-   Map3: {{ _postArrayMatch.maps[2].name}}
-    <Br>
-   result3: {{ _postArrayMatch.maps[2].result}}
+
+

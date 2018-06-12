@@ -1,0 +1,27 @@
+html{
+    color:#ccc !important;
+}
+
+.container-fluid{
+    background-color:#252b30 !important;
+    color:#ccc !important;
+    
+}
+
+
+.box-holder{
+    width:70%;
+    height:35vh;
+    background-color:#343a40;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    top:5vh;
+    border-style: solid 1px;
+    border-color: #61687459;
+}
+
+.align-items{
+    margin-top:8% !important;
+    text-align: center !important;
+}
