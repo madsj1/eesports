@@ -11,10 +11,6 @@ import { matches, MatchService, results } from '../cs.service';
 export class CsResultsComponent implements OnInit {
   _postArrayResults: results[];
 
- /*  p: number = 1;
-  someArray = [];
-  collection: results[] = this.someArray; */
-
   constructor(public router:Router, private matchService: MatchService) {
   }
 

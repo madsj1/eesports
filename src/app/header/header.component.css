@@ -5,6 +5,10 @@ a {
     -webkit-text-decoration-skip: objects;
 }
 
+.logo{
+  height: 50px;
+}
+
 a:hover{
 color:#9ebad6;
 }
