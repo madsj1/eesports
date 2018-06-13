@@ -46,16 +46,12 @@ export class CsgoComponent implements OnInit {
    
   }
 
-
   getStreams(): void {
     this.matchService.getStreams().subscribe(
       resultArrayn => this._postArrayStreams = resultArrayn,
       error => console.log("Error :: " + error)
     )
   }
-
-
-
 
   /*
   getMatches(): void {
@@ -70,8 +66,6 @@ export class CsgoComponent implements OnInit {
     this.getNews();
     this.getResults();
     this.getStreams();
-  
-    
   }
 
 }

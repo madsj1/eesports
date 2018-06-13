@@ -7,11 +7,8 @@ import { MatchService, match } from '../cs.service';
   templateUrl: './match.component.html',
   styleUrls: ['./match.component.css']
 })
-
-
 export class MatchComponent implements OnInit {
   _postArrayMatch: match[];
-  
   
   constructor(public router:Router, private matchService: MatchService, private route: ActivatedRoute) {
     

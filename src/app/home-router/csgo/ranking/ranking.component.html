@@ -25,7 +25,7 @@
                       Change +-
                     </td>
                   </tr>
-                  <tr *ngFor="let post of _postArrayRanking" (click)="selectId(post.id)" style="cursor: pointer;">
+                  <tr *ngFor="let post of _postArrayRanking" (click)="selectId(post.team.id)" style="cursor: pointer;">
                       <td class="point-align">
                         {{post.points}}
                       </td>

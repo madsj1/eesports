@@ -12,14 +12,16 @@ import { UserprofileComponent } from './auth/login/userprofile/userprofile.compo
 import { CsResultsComponent } from './home-router/csgo/cs-results/cs-results.component';
 import { MatchComponent } from './home-router/csgo/match/match.component';
 import { RankingComponent } from './home-router/csgo/ranking/ranking.component';
+import { TeamPageComponent } from './home-router/csgo/team-page/team-page.component';
 
 export const routes: Routes = [
 
   { path: '', component: HomeRouterComponent },
-  { path: 'match/:id', component:MatchComponent},
   { path: 'csgo', component: CsgoComponent},
   { path: 'csgo/results', component: CsResultsComponent},
   { path: 'csgo/ranking', component: RankingComponent},
+  { path: 'csgo/match/:id', component:MatchComponent},
+  { path: 'csgo/team/:id', component: TeamPageComponent},
   /*   children: [
       { path: 'results', component: CsResultsComponent }
     ]

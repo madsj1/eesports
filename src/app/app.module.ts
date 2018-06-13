@@ -36,6 +36,7 @@ import { environment } from '../environments/environment';
 import { UsersService } from './shared/users.service';
 import { MatchComponent } from './home-router/csgo/match/match.component';
 import { RankingComponent } from './home-router/csgo/ranking/ranking.component';
+import { TeamPageComponent } from './home-router/csgo/team-page/team-page.component';
 
 
 
@@ -53,7 +54,8 @@ import { RankingComponent } from './home-router/csgo/ranking/ranking.component';
     UserprofileComponent,
     CsResultsComponent,
     MatchComponent,
-    RankingComponent
+    RankingComponent,
+    TeamPageComponent
  
    
   ],
