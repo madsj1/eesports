@@ -104,6 +104,29 @@ export interface match{
   highlights:[{}];
 }
 
+export interface team{
+  name: string;
+  logo: string;
+  coverImage: string;
+  location: string;
+  facebook: string;
+  twitter: string;
+  rank: number;
+  players:{name: string; id: number;}
+  recentResults: {matchId: number; enemyTeam:{id:number; name:string;}; result:string; event:{id:number; name: string;}}
+  rankingDevelopment:{number};
+  bigAchivements:{place:string; event:{name:string; id:number;}}
+  mapStatistics:{inf:{winningPercentage:number; ctWinningPercentage:number; tWinningPercentage:number; timesPlayed:number;}
+                 mrg:{winningPercentage:number; ctWinningPercentage:number; tWinningPercentage:number; timesPlayed:number;}
+                 ovp:{winningPercentage:number; ctWinningPercentage:number; tWinningPercentage:number; timesPlayed:number;}
+                 trn:{winningPercentage:number; ctWinningPercentage:number; tWinningPercentage:number; timesPlayed:number;}
+                 nuke:{winningPercentage:number; ctWinningPercentage:number; tWinningPercentage:number; timesPlayed:number;}
+                 cch:{winningPercentage:number; ctWinningPercentage:number; tWinningPercentage:number; timesPlayed:number;}
+                 d2:{winningPercentage:number; ctWinningPercentage:number; tWinningPercentage:number; timesPlayed:number;}
+                }
+  events:{name:string; id:number;}
+}
+
 @Injectable()
 export class MatchService {
   constructor(private http: HttpClient) {}  
@@ -130,6 +153,10 @@ export class MatchService {
 
   getMatch(id:number): Observable<match[]>{
     return this.http.get<match[]>(`http://localhost:3000/match/${id}`)
+  }
+
+  getTeam(id:number): Observable<team[]>{
+    return this.http.get<team[]>(`http://localhost:3000/team/${id}`)
   }
   
 /*

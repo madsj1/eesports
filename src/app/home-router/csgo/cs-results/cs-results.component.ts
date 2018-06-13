@@ -26,7 +26,7 @@ export class CsResultsComponent implements OnInit {
   }
 
   selectId(id){
-    this.router.navigate(['/match', id]);
+    this.router.navigate(['/csgo/match', id]);
   }
 
 }

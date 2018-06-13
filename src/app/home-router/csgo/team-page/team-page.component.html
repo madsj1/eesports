@@ -1,0 +1,31 @@
+<div class="blocktest">
+  <div class="blur imageCSnoA" alt="cs:go | Eesports">
+    <div class="content">
+      <div class="container-fluid">
+        <div>
+          <img src="{{ _postArrayTeam.logo}}" height="100" width="100" class="logo" alt="{{ _postArrayTeam.logo">
+          <p>{{ _postArrayTeam.name }}</p>
+          <p>{{_postArrayTeam.location}}</p>
+        </div>
+        <div>
+          World ranking {{_postArrayTeam.rank}}
+        </div>
+        <div class="row">
+          <div *ngFor="let post of _postArrayTeam.players">
+            <div class="col">
+              <img style="width: 14.4vw" src="https://static.hltv.org//images/playerprofile/bodyshot/compressed/{{post.id}}.png">
+            </div>
+            <div style="text-align: center" class="col">
+              {{post.name}}
+            </div>
+          </div>
+        </div>
+        <div>
+          <a href="{{_postArrayTeam.facebook}}">Facebook</a>
+          <a href="{{_postArrayTeam.twitter}}">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

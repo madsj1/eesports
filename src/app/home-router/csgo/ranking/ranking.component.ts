@@ -25,4 +25,8 @@ export class RankingComponent implements OnInit {
     this.getRanking();
   }
 
+  selectId(id){
+    this.router.navigate(['/csgo/team', id]);
+  }
+
 }
