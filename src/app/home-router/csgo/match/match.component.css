@@ -5,13 +5,16 @@ html{
 .container-fluid{
     background-color:#252b30 !important;
     color:#ccc !important;
+    min-height: 100vh;
+    padding: 40px;
     
 }
 
 
 .box-holder{
     width:70%;
-    height:35vh;
+    height:auto;
+    min-height: 35vh;
     background-color:#343a40;
     margin-left:auto;
     margin-right:auto;
@@ -24,4 +27,83 @@ html{
 .align-items{
     margin-top:8% !important;
     text-align: center !important;
+}
+
+footer{margin-top:-2vh;}
+
+.mapNotplayed{
+    filter: grayscale(100%);
+}
+
+.resultInfo{
+    height: 15px;
+    line-height: 30px;
+    margin-left: 5px;
+    
+}
+
+.align-maps{
+    justify-content: center; padding: 5%;
+}
+
+.card-body{
+    text-transform: uppercase !important;
+}
+
+.highlight-box{
+    height: 100px;
+    width: 96.2%;
+    background-color: #343a40;
+    padding: 10px;
+    margin-top: 7%;
+}
+
+.holder{
+    margin-top: 0.5%;
+    margin-left: 15%;
+    margin-right: 14.6%;
+
+}
+.headline{
+    background-color: #343a40;
+    height: 50px;
+    width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 5%;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+.box-holder-lineup{
+    width:70%;
+    height: 20vh;
+    margin-top: 1%;
+    background-color:#343a40;
+    margin-left:auto;
+    margin-right:auto;
+    border-style: solid 1px;
+    border-color: #61687459;
+}
+
+.players{
+    padding: 15px;
+}
+
+.border{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #53595f;
+}
+
+.moveCenter{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.playerName{
+    width: 100px;
+    text-align: center;
+    margin-top: 6%;
 }
