@@ -31,6 +31,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { UserprofileComponent } from './auth/login/userprofile/userprofile.component';
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { environment } from '../environments/environment';
 import { UsersService } from './shared/users.service';
@@ -70,7 +71,8 @@ import { TeamPageComponent } from './home-router/csgo/team-page/team-page.compon
     AngularFireModule.initializeApp(environment.firebaseConfig),                   
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AngularFontAwesomeModule
   ],
   providers: [AuthService,AuthBlock,AngularFireAuth,UsersService,MatchService],
   bootstrap: [AppComponent]

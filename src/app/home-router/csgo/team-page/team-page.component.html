@@ -2,27 +2,54 @@
   <div class="blur imageCSnoA" alt="cs:go | Eesports">
     <div class="content">
       <div class="container-fluid">
-        <div>
-          <img src="{{ _postArrayTeam.logo}}" height="100" width="100" class="logo" alt="{{ _postArrayTeam.logo">
-          <p>{{ _postArrayTeam.name }}</p>
-          <p>{{_postArrayTeam.location}}</p>
-        </div>
-        <div>
-          World ranking {{_postArrayTeam.rank}}
-        </div>
-        <div class="row">
-          <div *ngFor="let post of _postArrayTeam.players">
-            <div class="col">
-              <img style="width: 14.4vw" src="https://static.hltv.org//images/playerprofile/bodyshot/compressed/{{post.id}}.png">
-            </div>
-            <div style="text-align: center" class="col">
-              {{post.name}}
+        <div class="box-holder">
+          <div>
+            <div class="row bottom">
+              <div class="logo">
+                <img src="{{ _postArrayTeam.logo}}" height="100" width="100" class="logo" alt="{{ _postArrayTeam.logo">
+              </div>
+              <div style="color: #0ca2cf;" class="align">
+                World ranking #{{_postArrayTeam.rank}}
+                <br>
+                {{_postArrayTeam.location}}
+                <h1>{{ _postArrayTeam.name }}</h1>
+              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <a href="{{_postArrayTeam.facebook}}">Facebook</a>
-          <a href="{{_postArrayTeam.twitter}}">Twitter</a>
+          <div class="rank">
+
+          </div>
+          <div class="row display">
+            <div *ngFor="let post of _postArrayTeam.players">
+              <div class="col" style="text-align: center; color:#0ca2cf;">
+                <img id="player" style="width: 14.4vw;" src="https://static.hltv.org//images/playerprofile/bodyshot/compressed/{{post.id}}.png">
+              </div>
+              <div class="col">
+                <p style="text-align: center; color:#0ca2cf;">
+                  {{post.name}}
+                </p>
+              </div>
+            </div>
+            <div class="coverImage">
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <a href="{{_postArrayTeam.twitter}}">
+              <span class="fa-stack fa-2x">
+                  <i class="fas fa-square fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+            <a href="{{_postArrayTeam.facebook}}">
+              <span class="fa-stack fa-2x">
+                  <i class="fas facebook fa-square fa-stack-2x fa-inverse"></i>
+                  <i class="fab fa-facebook fa-stack-1x "></i>
+                </span>
+            </a>
+          </div>
+          <div *ngFor="let post of _postArrayTeam.recentResults">
+            
+          </div>
         </div>
       </div>
     </div>

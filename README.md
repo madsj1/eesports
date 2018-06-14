@@ -5,6 +5,7 @@
 - Run 4. `npm install --save angularfire2`
 - Run 5. `npm install --save firebase`
 - Run 6. `npm install ngx-pagination --save`
+- Run 7. `npm i font-awesome --save`
 
 # Eeesports
 
