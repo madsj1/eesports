@@ -39,7 +39,7 @@
 .fa-facebook{
     padding-top: 3px;
     padding-left: 1px;
-    padding-bottom: 1px;
+    padding-bottom: 2px;
     font-size: 3.4vw;
 }
 .facebook{
@@ -55,8 +55,19 @@
     padding-top: 20.88235294%;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: .1;
-    z-index: 2;
+    opacity: 1;
     position:absolute;
     margin-left: 1.33%;
+    background-position: 0px -159px;
+}
+.coverImage1{
+    background-color: #4286f4;
+    width: 100%;
+    padding-top: 20.88235294%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .8;
+    position:absolute;
+    margin-left: 1.33%;
+    background-position: 0px -159px;
 }

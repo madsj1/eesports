@@ -5,10 +5,10 @@
         <div class="box-holder">
           <div>
             <div class="row bottom">
-              <div class="logo">
-                <img src="{{ _postArrayTeam.logo}}" height="100" width="100" class="logo" alt="{{ _postArrayTeam.logo">
+              <div class="col-1 logo">
+                <img src="{{ _postArrayTeam.logo}}" height="100" width="100" class="logo" alt="{{ _postArrayTeam.name}}">
               </div>
-              <div style="color: #0ca2cf;" class="align">
+              <div style="color: #0ca2cf;" class="col-md-4 offset-md-1 align">
                 World ranking #{{_postArrayTeam.rank}}
                 <br>
                 {{_postArrayTeam.location}}
@@ -20,17 +20,19 @@
 
           </div>
           <div class="row display">
+            <div class="coverImage">
+            </div>
+            <div class="coverImage1">
+            </div>
             <div *ngFor="let post of _postArrayTeam.players">
               <div class="col" style="text-align: center; color:#0ca2cf;">
                 <img id="player" style="width: 14.4vw;" src="https://static.hltv.org//images/playerprofile/bodyshot/compressed/{{post.id}}.png">
               </div>
               <div class="col">
-                <p style="text-align: center; color:#0ca2cf;">
+                <p style="text-align: center; color:black;">
                   {{post.name}}
                 </p>
               </div>
-            </div>
-            <div class="coverImage">
             </div>
           </div>
           <div style="text-align: right;">

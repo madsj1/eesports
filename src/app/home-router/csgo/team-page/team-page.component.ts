@@ -9,13 +9,9 @@ import { MatchService, match, team } from '../cs.service';
 })
 export class TeamPageComponent implements OnInit {
   _postArrayTeam: team[];
-
+  myJson = JSON.stringify(this._postArrayTeam)
   constructor(public router:Router, private matchService: MatchService, private route: ActivatedRoute) { 
-
-  }
-
-  ngOnInit() {
-    this.getTeamId();
+    
   }
 
   getTeamId() :void {
@@ -28,5 +24,21 @@ export class TeamPageComponent implements OnInit {
       )
     })
    }
+
+   getTeamCover() :void {
+    this.route.params.forEach((params: Params)=> {
+      let id = +params['id'];
+      
+      this.matchService.getTeam(id).subscribe(
+        resultArray => this._postArrayTeam = resultArray,
+        error => console.log("Error ::" + error)
+      )
+    })
+   }
+
+   ngOnInit() {
+    this.getTeamId();
+    
+  }
 
 }
