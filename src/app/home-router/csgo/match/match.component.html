@@ -8,7 +8,7 @@
         <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team1.id}}" height="100" width="100" class="logo" alt="{{ _postArrayMatch.team1.name}}">
         <p>{{ _postArrayMatch.team1.name }}</p>
 
-        <div *ngIf="_postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3'">
+        <div *ngIf="_postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3' || _postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3 (LAN)'">
           <p style="color:red;">0</p>
         </div>
         <div *ngIf="_postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name  && _postArrayMatch.format == 'Best of 1' || _postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name  && _postArrayMatch.format == 'Best of 1 (Online)'">
@@ -16,10 +16,10 @@
         </div>
 
 
-        <div *ngIf="_postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3'">
+        <div *ngIf="_postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
           <p style="color:green;">WIN</p>
         </div>
-        <div *ngIf="_postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3'">
+        <div *ngIf="_postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
           <p style="color:red;">LOSE</p>
         </div>
 
@@ -44,7 +44,7 @@
 
 
 
-        <div *ngIf="_postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3'">
+        <div *ngIf="_postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3' || _postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3 (LAN)'">
           <p style="color:red;">0</p>
         </div>
         <div *ngIf="_postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name  && _postArrayMatch.format == 'Best of 1' || _postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name  && _postArrayMatch.format == 'Best of 1 (Online)'">
@@ -53,10 +53,10 @@
 
 
 
-        <div *ngIf="_postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3'">
+        <div *ngIf="_postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
           <p style="color:green;">WIN</p>
         </div>
-        <div *ngIf="_postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3'">
+        <div *ngIf="_postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
           <p style="color:red;">LOSE</p>
         </div>
 

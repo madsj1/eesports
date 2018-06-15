@@ -1,5 +1,5 @@
 <div class="blocktest">
-  <div class="blur imageCSnoA" alt="cs:go | Eesports">
+  <div class="imageCSnoA" alt="cs:go | Eesports">
     <div class="content">
       <div class="row justify-content-md-center">
         <div class="col-md-12 col-sm-12">
@@ -25,7 +25,7 @@
                       Change +-
                     </td>
                   </tr>
-                  <tr *ngFor="let post of _postArrayRanking" (click)="selectId(post.team.id)" style="cursor: pointer;">
+                  <tr *ngFor="let post of _postArrayRanking | paginate: { itemsPerPage: 10, currentPage: p }" (click)="selectId(post.team.id)" style="cursor: pointer;">
                       <td class="point-align">
                         {{post.points}}
                       </td>
@@ -47,6 +47,12 @@
             </table>
         </div>
       </div>
+      <div class="row justify-content-md-center">
+          <div class="col-lg-12 col-md-8">
+              <pagination-controls class="my-pagination" maxSize="3" (pageChange)="p = $event"></pagination-controls>
+          </div>
+      </div>
+      
     </div>
   </div>
 </div>

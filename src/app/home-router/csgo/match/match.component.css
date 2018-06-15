@@ -78,7 +78,8 @@ footer{margin-top:-2vh;}
 
 .box-holder-lineup{
     width:70%;
-    height: 20vh;
+    min-height: 20vh;
+    height: auto;
     margin-top: 1%;
     background-color:#343a40;
     margin-left:auto;
@@ -107,3 +108,4 @@ footer{margin-top:-2vh;}
     text-align: center;
     margin-top: 6%;
 }
+

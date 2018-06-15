@@ -98,6 +98,12 @@
                 <div class="sideBoxclick"></div>
             </a>
         </div>
+        <div class="sideBox" *ngIf="router.url === '/csgo/match'">
+            <a class="nav-item nav-link centerIt" routerLink="csgo">
+                <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
+                <div class="sideBoxclick"></div>
+            </a>
+        </div>
 
         <div class="sideBox" *ngIf="router.url === '/dota'">
             <a class="nav-item nav-link centerIt" routerLink="dota">

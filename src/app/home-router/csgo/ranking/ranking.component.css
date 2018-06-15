@@ -5,3 +5,7 @@
 .team-align{
     text-align: left;
 }
+
+.table td, .table th {
+    padding: .60rem !important;
+}

@@ -3,10 +3,22 @@
     <div [ngClass]="router.url === '/csgo' ? 'imageCSnoA' : 'imageCS'" class="blur" alt="cs:go | Eesports">
         <div *ngIf="router.url === '/csgo'" class="content">
             <div class="row">
-                <div class="col-md-4">
-                    
+                <div style="margin-top: 2%;">
+                    <div class="recentGamesHeader col-lg-3">Recent Games</div>
+                    <div class="rankingsHeader col-lg-3">Rankings</div>
+                    <div class="newsHeader col-lg-6">News</div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-lg-6"><img src="https://static.hltv.org//images/galleries/1693-full/1528226898.843.jpeg" height="80%" width="40%"></div>
+            </div>
+                    <div style="width:40%; color: #ccc;
+                    margin-left: 31%;"><p>NiP have announced the addition of Jonas "Lekr0" Olofsson, who has replaced William "draken" Sundin in the active roster.<p>
+                        <p>The decision comes as a result of differences "both personal and in-game" between the AWPer and the team, who jumped at the possibility of acquiring Lekr0 after he had been replaced by Richard "Xizt" Landström in fnatic.</p>
+                    </div>
+            
+
         </div> <!--CONtENT-->
     </div>
 </div>

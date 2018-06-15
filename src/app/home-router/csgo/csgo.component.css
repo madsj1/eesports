@@ -1,0 +1,33 @@
+.newsHeader{
+    display: block;
+    background-color: #0026FF;
+    width: 40%;
+    margin: auto;
+    padding: 5px;
+    color: white;
+    font-weight: 500;
+}
+
+.recentGamesHeader{
+    display: block;
+    background-color: #0026FF;
+    width: 20%;
+    margin: auto;
+    padding: 5px;
+    color: white;
+    font-weight: 500;
+    float:left;
+    margin-left:5%;
+}
+
+.rankingsHeader{
+    display: block;
+    background-color: #0026FF;
+    width: 20%;
+    margin: auto;
+    padding: 5px;
+    color: white;
+    font-weight: 500;
+    float: right;
+    margin-right: 5%;
+}
