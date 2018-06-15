@@ -1,5 +1,5 @@
 <div class="blocktest">
-  <div class="blur imageCSnoA" alt="cs:go | Eesports">
+  <div class="imageCSnoA" alt="cs:go | Eesports">
     <div class="content">
       <div class="container-fluid">
         <div class="box-holder">
@@ -49,10 +49,71 @@
                 </span>
             </a>
           </div>
-          <div *ngFor="let post of _postArrayTeam.recentResults">
-            
-          </div>
         </div>
+        <br>
+        <br>
+        <div class="row">
+            <table class="table  table-hover table-dark text-center">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col" colspan="7" style="color: #80aad4;">Recent results for {{_postArrayTeam.name}}</th>
+                    </tr>
+                    <tr *ngFor="let post of _postArrayTeam.recentResults" (click)="selectId(post.matchID)" style="cursor: pointer;">
+                      <td>
+                        <p style="float: right;">{{_postArrayTeam.name}}</p>
+                      </td>
+                      <td style="width:10%">
+                        <img width="40px" src="{{_postArrayTeam.logo}}">
+                      </td>
+                      <td style="width: 10%">
+                        <p>{{post.result}}</p>
+                      </td>
+                      <td style="width: 10%">
+                        <img width="40px" src="https://static.hltv.org/images/team/logo/{{post.enemyTeam.id}}">
+                      </td>
+                      <td>
+                        <p style="float: left;">{{post.enemyTeam.name}}</p>
+                      </td>
+                      <td>
+                        <img width="40px" style="float: right;" src="https://static.hltv.org/images/eventLogos/{{post.event.id}}.png">
+                      </td>
+                      <td style="width: 20%">
+                        <p>{{post.event.name}}</p>
+                      </td>
+                      <input id="matchId" type="hidden" value="{{post.matchID}}">
+                    </tr>
+                </thead>
+            </table>
+            <table class="table table-sm table-dark">
+              <thead>
+                <tr class="text-center">
+                  <th scope="col" colspan="7" style="color:#80aad4;">
+                    <div>Big team archivements</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let post of _postArrayTeam.bigAchievements">
+                  <td>
+                    <div [ngStyle]="{'color':post.place === 'Group stage' ? 'white' : 'white'}" *ngIf="post.place == 'Group stage'"><i class="fa fa-trophy black"></i></div>
+                    <div [ngStyle]="{'color':post.place === '1st' ? 'gold' : 'gold'}" *ngIf="post.place == '1st'"><i class="fa fa-trophy gold"></i></div>
+                    <div [ngStyle]="{'color':post.place === '2nd' ? 'silver' : 'silver'}" *ngIf="post.place == '2nd'"><i class="fa fa-trophy silver"></i></div>
+                    <div [ngStyle]="{'color':post.place === '3rd' ? 'brown' : 'brown'}" *ngIf="post.place == '3rd'"><i class="fa fa-trophy bronze"></i></div>
+                    <div [ngStyle]="{'color':post.place === '1/4 final' ? 'grey' : 'grey'}" *ngIf="post.place == '1/4 final'"><i class="fa fa-trophy bronze"></i></div>
+                  </td>
+                  <td style="color:white">
+                    <div>{{post.place}}  at </div>
+                  </td>
+                  <td style="color:white; text-align: left">
+                    <div>{{post.event.name}}</div>
+                  </td>
+                  <td>
+                    <img width="40px" src="https://static.hltv.org/images/eventLogos/{{post.event.id}}.png">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
       </div>
     </div>
   </div>

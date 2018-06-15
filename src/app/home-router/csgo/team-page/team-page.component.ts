@@ -9,7 +9,7 @@ import { MatchService, match, team } from '../cs.service';
 })
 export class TeamPageComponent implements OnInit {
   _postArrayTeam: team[];
-  myJson = JSON.stringify(this._postArrayTeam)
+  _postArrayMatch: match[];
   constructor(public router:Router, private matchService: MatchService, private route: ActivatedRoute) { 
     
   }
@@ -36,9 +36,24 @@ export class TeamPageComponent implements OnInit {
     })
    }
 
+   getMatchId() :void {
+    this.route.params.forEach((params: Params)=> {
+      let id = +params['id'];
+      
+      this.matchService.getMatch(id).subscribe(
+        resultArray => this._postArrayMatch = resultArray,
+        error => console.log("Error ::" + error)
+      )
+    })
+   }
+
+   selectId(id){
+    this.router.navigate(['/csgo/match', id]);
+  }
+
    ngOnInit() {
     this.getTeamId();
-    
+    this.getMatchId();
   }
 
 }
