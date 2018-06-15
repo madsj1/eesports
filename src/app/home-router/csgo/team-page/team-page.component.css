@@ -46,8 +46,9 @@
     font-size: 1.5vw;
 }
 .display{
-    display: flex;
+    flex-wrap: nowrap; 
     z-index: 1;
+    width: 100%;
 }
 .coverImage{
     background-image: url(https://static.hltv.org/./images/galleries/10061-medium/1485719395.0855.jpeg);
@@ -57,7 +58,7 @@
     background-size: cover;
     opacity: 1;
     position:absolute;
-    margin-left: 1.33%;
+    margin-left: 1.6%;
     background-position: 0px -159px;
 }
 .coverImage1{
@@ -68,6 +69,6 @@
     background-size: cover;
     opacity: .8;
     position: absolute;
-    margin-left: 1.17%;
+    margin-left: 1.6%;
     background-position: 0px -164px;
 }
