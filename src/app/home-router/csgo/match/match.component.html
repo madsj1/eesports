@@ -79,7 +79,7 @@
             <div class="card-body"> Inferno </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/inferno.jpg" alt="Inferno" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result }}</p>
+            <p class="resultInfo">{{ map.result | slice:0:-5 }}</p>
           </div>
 
         </div>
@@ -90,7 +90,7 @@
           <div class="card text-white bg-dark mb-3 d-inline-block">
             <div class="card-body"> Nuke </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/nuke.jpg" alt="Nuke" height="100px" width="290px">
-            <p class="resultInfo">{{ map.result }}</p>
+            <p class="resultInfo">{{ map.result | slice:0:-5  }}</p>
           </div>
 
         </div>
@@ -102,7 +102,7 @@
             <div class="card-body"> Cache </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/cache.png" alt="Cache" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result }}</p>
+            <p class="resultInfo">{{ map.result | slice:0:-5 }}</p>
           </div>
 
         </div>
@@ -114,7 +114,7 @@
             <div class="card-body"> Mirage </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/mirage.png" alt="Mirage" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result }}</p>
+            <p class="resultInfo">{{ map.result | slice:0:-5  }}</p>
           </div>
 
         </div>
@@ -125,7 +125,7 @@
             <div class="card-body"> Overpass </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/overpass.png" alt="Overpass" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result }}</p>
+            <p class="resultInfo">{{ map.result | slice:0:-5  }}</p>
           </div>
 
         </div>
@@ -137,7 +137,7 @@
             <div class="card-body"> Dust2 </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/dust2.png" alt="Dust2" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result }}</p>
+            <p class="resultInfo">{{ map.result | slice:0:-5  }}</p>
           </div>
 
         </div>
@@ -148,7 +148,7 @@
             <div class="card-body"> Train </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/train.png" alt="Train" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result }}</p>
+            <p class="resultInfo">{{ map.result | slice:0:-5  }}</p>
           </div>
 
         </div>
@@ -170,7 +170,7 @@
           
         <div class="row players">
         <div class="col-md-2 moveCenter" *ngFor="let playerTM1 of _postArrayMatch.players.team1">
-          <img class="border" src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM1.id}}/400.jpeg?v=4" height="100px" width="100px;">
+          <img class="border img-fluid " src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM1.id}}/400.jpeg?v=4" height="100px" width="100px;">
           <p class="playerName">{{playerTM1.name}}</p>
         </div>
         <img style="margin-right: 5%;
@@ -181,7 +181,7 @@
 <div class="box-holder-lineup">
       <div class="row players">
           <div class="col-md-2 moveCenter" *ngFor="let playerTM2 of _postArrayMatch.players.team2">
-            <img class="border" src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM2.id}}/400.jpeg?v=4" alt="{{playerTM2.name}}" height="100px" width="100px;">
+            <img class="border img-fluid " src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM2.id}}/400.jpeg?v=4" alt="{{playerTM2.name}}" height="100px" width="100px;">
             <p class="playerName">{{playerTM2.name}}</p>
           </div>
           <img style="margin-right: 5%;
