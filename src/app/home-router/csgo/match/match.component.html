@@ -7,21 +7,29 @@
       <div class="col-md-4 col-xs-12 align-items">
         <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch.team1.id}}" height="100" width="100" class="logo" alt="{{ _postArrayMatch.team1.name}}">
         <p>{{ _postArrayMatch.team1.name }}</p>
-
+<!-- 
         <div *ngIf="_postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3' || _postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3 (LAN)'">
           <p style="color:red;">0</p>
         </div>
         <div *ngIf="_postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name  && _postArrayMatch.format == 'Best of 1' || _postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name  && _postArrayMatch.format == 'Best of 1 (Online)'">
           <p style="color:green;">1</p>
-        </div>
+        </div> -->
+
+        
+        <div *ngIf="_postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name">
+            <p style="color:green;">WIN</p>
+          </div>
+          <div *ngIf="_postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name">
+            <p style="color:red;">LOSE</p>
+          </div>
 
 
-        <div *ngIf="_postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
+      <!--   <div *ngIf="_postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
           <p style="color:green;">WIN</p>
         </div>
         <div *ngIf="_postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
           <p style="color:red;">LOSE</p>
-        </div>
+        </div> -->
 
         <!--   <div *ngIf="_postArrayMatch.maps[0].result|slice:0:2 > _postArrayMatch.maps[0].result|slice:3:5 && _postArrayMatch.format == 'Best of 3'">
           <p style="color:red">1</p>
@@ -44,19 +52,19 @@
 
 
 
-        <div *ngIf="_postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3' || _postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3 (LAN)'">
+      <!--   <div *ngIf="_postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3' || _postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3 (LAN)'">
           <p style="color:red;">0</p>
         </div>
         <div *ngIf="_postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name  && _postArrayMatch.format == 'Best of 1' || _postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name  && _postArrayMatch.format == 'Best of 1 (Online)'">
           <p style="color:green;">1</p>
         </div>
+ -->
 
 
-
-        <div *ngIf="_postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
+        <div *ngIf="_postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name">
           <p style="color:green;">WIN</p>
         </div>
-        <div *ngIf="_postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
+        <div *ngIf="_postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name">
           <p style="color:red;">LOSE</p>
         </div>
 
@@ -79,7 +87,7 @@
             <div class="card-body"> Inferno </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/inferno.jpg" alt="Inferno" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result | slice:0:-5 }}</p>
+            <p class="resultInfo">{{ map.result }}</p>
           </div>
 
         </div>
@@ -89,8 +97,9 @@
         <div class="col-md-12" *ngSwitchCase="'nuke'">
           <div class="card text-white bg-dark mb-3 d-inline-block">
             <div class="card-body"> Nuke </div>
-            <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/nuke.jpg" alt="Nuke" height="100px" width="290px">
-            <p class="resultInfo">{{ map.result | slice:0:-5  }}</p>
+            <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/nuke.jpg" alt="Nuke" height="100px"
+             width="290px">
+            <p class="resultInfo">{{ map.result }}</p>
           </div>
 
         </div>
@@ -102,7 +111,7 @@
             <div class="card-body"> Cache </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/cache.png" alt="Cache" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result | slice:0:-5 }}</p>
+            <p class="resultInfo">{{ map.result }}</p>
           </div>
 
         </div>
@@ -114,7 +123,7 @@
             <div class="card-body"> Mirage </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/mirage.png" alt="Mirage" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result | slice:0:-5  }}</p>
+            <p class="resultInfo">{{ map.result }}</p>
           </div>
 
         </div>
@@ -125,7 +134,7 @@
             <div class="card-body"> Overpass </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/overpass.png" alt="Overpass" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result | slice:0:-5  }}</p>
+            <p class="resultInfo">{{ map.result }}</p>
           </div>
 
         </div>
@@ -137,7 +146,7 @@
             <div class="card-body"> Dust2 </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/dust2.png" alt="Dust2" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result | slice:0:-5  }}</p>
+            <p class="resultInfo">{{ map.result }}</p>
           </div>
 
         </div>
@@ -148,7 +157,7 @@
             <div class="card-body"> Train </div>
             <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/train.png" alt="Train" height="100px"
               width="290px">
-            <p class="resultInfo">{{ map.result | slice:0:-5  }}</p>
+            <p class="resultInfo">{{ map.result }}</p>
           </div>
 
         </div>
@@ -170,7 +179,7 @@
           
         <div class="row players">
         <div class="col-md-2 moveCenter" *ngFor="let playerTM1 of _postArrayMatch.players.team1">
-          <img class="border img-fluid " src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM1.id}}/400.jpeg?v=4" height="100px" width="100px;">
+          <img class="border" src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM1.id}}/400.jpeg?v=4" height="100px" width="100px;">
           <p class="playerName">{{playerTM1.name}}</p>
         </div>
         <img style="margin-right: 5%;
@@ -181,7 +190,7 @@
 <div class="box-holder-lineup">
       <div class="row players">
           <div class="col-md-2 moveCenter" *ngFor="let playerTM2 of _postArrayMatch.players.team2">
-            <img class="border img-fluid " src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM2.id}}/400.jpeg?v=4" alt="{{playerTM2.name}}" height="100px" width="100px;">
+            <img class="border" src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM2.id}}/400.jpeg?v=4" alt="{{playerTM2.name}}" height="100px" width="100px;">
             <p class="playerName">{{playerTM2.name}}</p>
           </div>
           <img style="margin-right: 5%;

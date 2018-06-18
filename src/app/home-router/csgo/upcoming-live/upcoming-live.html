@@ -1,4 +1,113 @@
-<p>
-  selected-match works!
-</p>
+<div class="blocktest">
+  <div class="imageCSnoA" alt="cs:go | Eesports">
+    <div class="content">
+      <div class="row justify-content-md-center">
+        <div class="col-md-12 col-sm-12">
+
+            <table class="table table-sm table-hover table-dark text-center">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="0" style="color: #80aad4;"> {{today | date }}</th>
+                        <th scope="col" colspan="0" style="color: #80aad4;"> </th>
+                        <th scope="col" colspan="0" style="color: #80aad4;"> </th>
+                        <th scope="col" colspan="0" style="color: #80aad4;">Live games</th>
+                        <th scope="col" colspan="0" style="color: #80aad4;"> </th>
+                        <th scope="col" colspan="0" style="color: #80aad4;"> </th>
+                        <th scope="col" colspan="0" style="color: #80aad4;">format</th>
+                        <th scope="col" colspan="0" style="color: #80aad4;">maps</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+               
+                  <tr *ngFor="let post of _postArrayMatches; let i = index" (click)="selectId(post.id)" style="cursor: pointer;">
+                    <ng-template [ngIf]="post.live == true">
+                        
+                        <td class="point-align">
+                            {{post.date | date:'shortTime' }}
+                        </td>
+                        <td class="team-logo">
+                            <img src="https://static.hltv.org/images/team/logo/{{post.team1.id}}" width="30px" height="30px" alt="{{post.team1.name}}">
+                        </td>
+                        <td class="team-align">
+                          {{post.team1.name}}
+                        </td>
+  
+                        <td>VS</td>
+                    
+  
+                        <td class="team-logo">
+                            <img src="https://static.hltv.org/images/team/logo/{{post.team2.id}}" width="30px" height="30px" alt="{{post.team2.name}}">
+                        </td>
+                        <td class="team-align">
+                          {{post.team2.name}}
+                        </td>
+  
+                        <td>{{post.format}}</td>
+                        <td>{{post.maps}} {{post.map}}</td>
+                        
+                        
+                        <input id="matchId" type="hidden" value="{{post.id}}">
+                      </ng-template>
+                  </tr>
+                </tbody>
+            </table>
+<br>  
+
+          <table class="table table-sm table-hover table-dark text-center">
+              <thead>
+                  <tr>
+                      <th scope="col" colspan="0" style="color: #80aad4;"> {{today | date }}</th>
+                      <th scope="col" colspan="0" style="color: #80aad4;"> </th>
+                      <th scope="col" colspan="0" style="color: #80aad4;"> </th>
+                      <th scope="col" colspan="0" style="color: #80aad4;">Upcoming games</th>
+                      <th scope="col" colspan="0" style="color: #80aad4;"> </th>
+                      <th scope="col" colspan="0" style="color: #80aad4;"> </th>
+                      <th scope="col" colspan="0" style="color: #80aad4;">format</th>
+                      <th scope="col" colspan="0" style="color: #80aad4;">maps</th>
+                      
+                  </tr>
+              </thead>
+              <tbody>
+             
+                <tr *ngFor="let post of _postArrayMatches; let i = index" (click)="selectId(post.id)" style="cursor: pointer;">
+                  <ng-template [ngIf]="(post.date | date:'mediumDate') == (today | date)">
+                      
+                      <td class="point-align">
+                          {{post.date | date:'shortTime' }}
+                      </td>
+                      <td class="team-logo">
+                          <img src="https://static.hltv.org/images/team/logo/{{post.team1.id}}" width="30px" height="30px" alt="{{post.team1.name}}">
+                      </td>
+                      <td class="team-align">
+                        {{post.team1.name}}
+                      </td>
+
+                      <td>VS</td>
+                  
+
+                      <td class="team-logo">
+                          <img src="https://static.hltv.org/images/team/logo/{{post.team2.id}}" width="30px" height="30px" alt="{{post.team2.name}}">
+                      </td>
+                      <td class="team-align">
+                        {{post.team2.name}}
+                      </td>
+
+                      <td>{{post.format}}</td>
+                      <td>{{post.map}}</td>
+                      
+                      <input id="matchId" type="hidden" value="{{post.id}}">
+                    </ng-template>
+                </tr>
+              </tbody>
+          </table>
+
+
+        </div>
+      </div>
+    
+      
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>

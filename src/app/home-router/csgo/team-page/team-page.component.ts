@@ -25,27 +25,7 @@ export class TeamPageComponent implements OnInit {
     })
    }
 
-   getTeamCover() :void {
-    this.route.params.forEach((params: Params)=> {
-      let id = +params['id'];
-      
-      this.matchService.getTeam(id).subscribe(
-        resultArray => this._postArrayTeam = resultArray,
-        error => console.log("Error ::" + error)
-      )
-    })
-   }
 
-   getMatchId() :void {
-    this.route.params.forEach((params: Params)=> {
-      let id = +params['id'];
-      
-      this.matchService.getMatch(id).subscribe(
-        resultArray => this._postArrayMatch = resultArray,
-        error => console.log("Error ::" + error)
-      )
-    })
-   }
 
    selectId(id){
     this.router.navigate(['/csgo/match', id]);
@@ -53,7 +33,6 @@ export class TeamPageComponent implements OnInit {
 
    ngOnInit() {
     this.getTeamId();
-    this.getMatchId();
   }
 
 }

@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 /* CSGO Pages */
 import { CsgoComponent } from './home-router/csgo/csgo.component';
 import { CsResultsComponent } from './home-router/csgo/cs-results/cs-results.component';
+import { MatchComponent } from './home-router/csgo/match/match.component';
+import { RankingComponent } from './home-router/csgo/ranking/ranking.component';
+import { TeamPageComponent } from './home-router/csgo/team-page/team-page.component';
+import { UpcomingLiveComponent } from './home-router/csgo/upcoming-live/upcoming-live';
+
 /* Dota Pages */
 import { DotaComponent } from './home-router/dota/dota.component';
 /* League Pages */
@@ -35,9 +40,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { environment } from '../environments/environment';
 import { UsersService } from './shared/users.service';
-import { MatchComponent } from './home-router/csgo/match/match.component';
-import { RankingComponent } from './home-router/csgo/ranking/ranking.component';
-import { TeamPageComponent } from './home-router/csgo/team-page/team-page.component';
 
 
 
@@ -56,7 +58,8 @@ import { TeamPageComponent } from './home-router/csgo/team-page/team-page.compon
     CsResultsComponent,
     MatchComponent,
     RankingComponent,
-    TeamPageComponent
+    TeamPageComponent,
+    UpcomingLiveComponent
  
    
   ],

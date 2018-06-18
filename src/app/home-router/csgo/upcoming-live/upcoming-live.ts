@@ -1,21 +1,33 @@
 import { Component, OnInit } from '@angular/core';
+import { MatchService, matches } from '../cs.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-  selector: 'app-selected-match',
-  templateUrl: './selected-match.component.html',
-  styleUrls: ['./selected-match.component.css']
+  selector: 'app-upcoming-live',
+  templateUrl: './upcoming-live.html',
+  styleUrls: ['./upcoming-live.css']
 })
-export class SelectedMatchComponent implements OnInit {
+export class UpcomingLiveComponent implements OnInit {
+  _postArrayMatches: matches[];
+  today:number = Date.now();
 
-  router: any;
-  constructor() { }
+  constructor(public router:Router, private matchService: MatchService) {
+    
+  }
 
-  viewDetails(match_id: any){
-    let url: string = "/match/" + match_id;
-      this.router.navigateByUrl(url)
+  getUpcomingMatches(): void {
+    this.matchService.getAllMatches().subscribe(
+      resultArray => this._postArrayMatches = resultArray,
+      error => console.log("Error :: " + error)
+    )
   }
 
   ngOnInit() {
+    this.getUpcomingMatches();
+  }
+
+  selectId(id){
+    this.router.navigate(['/csgo/match', id]);
   }
 
 }

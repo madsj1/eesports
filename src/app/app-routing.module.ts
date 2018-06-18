@@ -13,6 +13,8 @@ import { CsResultsComponent } from './home-router/csgo/cs-results/cs-results.com
 import { MatchComponent } from './home-router/csgo/match/match.component';
 import { RankingComponent } from './home-router/csgo/ranking/ranking.component';
 import { TeamPageComponent } from './home-router/csgo/team-page/team-page.component';
+import { UpcomingLiveComponent } from './home-router/csgo/upcoming-live/upcoming-live';
+
 
 export const routes: Routes = [
 
@@ -22,6 +24,7 @@ export const routes: Routes = [
   { path: 'csgo/ranking', component: RankingComponent},
   { path: 'csgo/match/:id', component:MatchComponent},
   { path: 'csgo/team/:id', component: TeamPageComponent},
+  { path: 'csgo/upcoming', component:UpcomingLiveComponent},
   /*   children: [
       { path: 'results', component: CsResultsComponent }
     ]

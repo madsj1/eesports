@@ -30,12 +30,23 @@
             </a>
             <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo/results">Results</a>
             <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo/results">Results</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo/ranking">World Ranking</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/match/${id}'" routerLink="csgo/match/${id}">Results</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/match/${id}'" routerLink="csgo/match/">World Ranking</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo/ranking">World Ranking</a>
             <a class="nav-item nav-link" *ngIf="router.url === '/csgo/ranking'" routerLink="csgo/results">Results</a>
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/upcoming'" routerLink="csgo/results">Results</a>
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/match/${id}'" routerLink="csgo/results">Results</a>
+
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo/ranking">World Ranking</a>
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo/ranking">World Ranking</a>
             <a class="nav-item nav-link" *ngIf="router.url === '/csgo/ranking'" routerLink="csgo/ranking">World Ranking</a>
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/upcoming'" routerLink="csgo/ranking">World Ranking</a>
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/match/${id}'" routerLink="csgo/match/">World Ranking</a>
+            
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo/upcoming">Upcoming</a>
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo/upcoming">Upcoming</a>
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/ranking'" routerLink="csgo/upcoming">Upcoming</a>
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/upcoming'" routerLink="csgo/upcoming">Upcoming</a>
+            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/match/${id}'" routerLink="csgo/upcoming">Upcoming</a>
+
+
             <a class="nav-item nav-link" *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="dota">
                 <img src="../../assets/Dota2_logo.png" width="60px" height="40px">
             </a>
@@ -101,6 +112,12 @@
             </a>
         </div>
         <div class="sideBox" *ngIf="router.url === '/csgo/match'">
+            <a class="nav-item nav-link centerIt" routerLink="csgo">
+                <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
+                <div class="sideBoxclick"></div>
+            </a>
+        </div>
+        <div class="sideBox" *ngIf="router.url === '/csgo/upcoming'">
             <a class="nav-item nav-link centerIt" routerLink="csgo">
                 <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
                 <div class="sideBoxclick"></div>

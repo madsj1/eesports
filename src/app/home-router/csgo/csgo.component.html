@@ -95,9 +95,9 @@
                         <table class="table table-hover table-dark">
                                 <tbody>
                                   <tr *ngFor="let post of _postArrayStreams; let i = index">
-                                      <div *ngIf="i<15">
+                                      <div *ngIf="i<6">
                                         <a href="https://www.hltv.org/{{post.hltvLink}}" target="_blank">
-                                    <td><img alt="Russia" src="https://static.hltv.org/images/bigflags/30x20/{{post.country.code}}.gif" class="flag" title="{{post.country.name}}"></td>
+                                    <td><img alt="{{post.country.name}}" src="https://static.hltv.org/images/bigflags/30x20/{{post.country.code}}.gif" class="flag" title="{{post.country.name}}"></td>
                                     <td>{{post.name}}</td>
                                     <td>{{post.viewers}}</td>
                                 </a>
