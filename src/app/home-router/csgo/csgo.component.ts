@@ -17,6 +17,7 @@ export class CsgoComponent implements OnInit {
   _postArrayStreams: streams[];
   _postArrayMatch: match[];
   _postArrayRanking: ranking[];
+  today:number = Date.now();
 
 
   constructor(public router:Router, private matchService: MatchService) {
@@ -65,11 +66,13 @@ export class CsgoComponent implements OnInit {
   }
 
 
+
   ngOnInit() {
     this.getNews();
     this.getStreams();
     this.getResults();
     this.getRanking();
+    this.getMatches();
   }
 
 }
