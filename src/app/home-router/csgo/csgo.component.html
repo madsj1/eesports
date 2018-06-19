@@ -6,18 +6,17 @@
                 
                     <div class="recentGamesHeader col-lg-2"><p class="text-center headlines">Last games</p>
                     
-                        <table class="table table-hover table-dark text-center">
+                        <table class="table table-sm table-hover table-dark text-center">
                               
                                 <tbody>
                                     <tr *ngFor="let post of _postArrayResults| paginate: { itemsPerPage: 10, currentPage: p }; let i = index" (click)="selectId(post.id)" style="cursor: pointer;">
-                                        <div *ngIf="i<5">
+                                        <ng-template [ngIf]="i<5">
                                         <td class="name-align">
                                                 <div class="items-align team1">
                                                     <div class="textShrink">{{post.team1.name}}</div>
-                                                    <img src="https://static.hltv.org/images/team/logo/{{post.team1.id}}" width="20px" height="20px" alt="{{post.team1.name}}">
                                                 </div>
-                                                
                                         </td>
+                                        <td><img src="https://static.hltv.org/images/team/logo/{{post.team1.id}}" width="20x" height="20px" alt="{{post.team1.name}}"></td>
                                         <td class="resultScore">
                                                 <!-- <span  [ngStyle]="{'color':post.result |  >= 16 ? 'green' : 'red'}">{{post.result | slice:0:2}}</span> -->
                                             <span  [ngStyle]="">{{post.result | slice:0:2}}</span> -
@@ -25,13 +24,14 @@
                                         </td>
                                         <td class="name-align">
                                                 <div class="items-align team2">
-                                                    <img src="https://static.hltv.org/images/team/logo/{{post.team2.id}}" width="20px" height="20px" alt="{{post.team2.name}}">
-                                                    <div class="textShrink">{{post.team2.name}}</div>
+                                                   
+                                                     <div class="textShrink">{{post.team2.name}}</div>
                                                 </div>
                                         </td>
+                                        <td> <img src="https://static.hltv.org/images/team/logo/{{post.team2.id}}" width="20px" height="20px" alt="{{post.team2.name}}"></td>
                                     
                                         <input id="matchId" type="hidden" value="{{post.id}}">
-                                    </div>
+                                        </ng-template>
                                     </tr>
                                 </tbody>
                             </table>
@@ -58,7 +58,7 @@
                                 <tbody>
                             
                                   <tr *ngFor="let post of _postArrayRanking; let i = index" (click)="selectTeamId(post.team.id)" style="cursor: pointer;">
-                                      <div *ngIf="i<5">
+                                    <ng-template [ngIf]="i<5">
                                       <td class="placement">
                                    <div [ngStyle]="{'color':post.place === '1' ? 'gold' : 'gold'}" *ngIf="post.place == '1'"><i class="fa fa-trophy gold"></i></div>
                                    <div [ngStyle]="{'color':post.place === '2' ? 'gold' : 'silver'}" *ngIf="post.place == '2'"><i class="fa fa-trophy gold"></i></div>
@@ -71,7 +71,7 @@
                                         {{post.team.name}}
                                       </td>
                                       <input id="matchId" type="hidden" value="{{post.id}}">
-                                    </div>
+                                    </ng-template>
                                   </tr>
                                 </tbody>
                             </table>
@@ -95,13 +95,13 @@
                         <table class="table table-hover table-dark">
                                 <tbody>
                                   <tr *ngFor="let post of _postArrayStreams; let i = index">
-                                      <div *ngIf="i<6">
+                                    <ng-template [ngIf]="i<8">
                                         <a href="https://www.hltv.org/{{post.hltvLink}}" target="_blank">
                                     <td><img alt="{{post.country.name}}" src="https://static.hltv.org/images/bigflags/30x20/{{post.country.code}}.gif" class="flag" title="{{post.country.name}}"></td>
                                     <td>{{post.name}}</td>
                                     <td>{{post.viewers}}</td>
                                 </a>
-                                      </div>
+                                    </ng-template>
                                   </tr>
                                
                                 </tbody>
