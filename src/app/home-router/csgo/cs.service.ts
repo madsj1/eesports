@@ -17,7 +17,7 @@ export interface news {
   title: string;
   description: string;
   link: string;
-  date: DateTimeFormat;
+  date: Date;
 }
 export interface results {
   id: number;
@@ -132,31 +132,31 @@ export class MatchService {
   constructor(private http: HttpClient) {}  
 
   getAllNews(): Observable<news[]>{
-    return this.http.get<news[]>('http://localhost:3000/')
+    return this.http.get<news[]>('https://csgoapi.herokuapp.com/')
   }
 
   getAllMatches(): Observable<matches[]>{
-    return this.http.get<matches[]>('http://localhost:3000/matches')
+    return this.http.get<matches[]>('https://csgoapi.herokuapp.com/matches')
   }
 
   getAllResults(): Observable<results[]>{
-    return this.http.get<results[]>('http://localhost:3000/results')
+    return this.http.get<results[]>('https://csgoapi.herokuapp.com/results')
   }
 
   getRanking(): Observable<ranking[]>{
-    return this.http.get<ranking[]>('http://localhost:3000/ranking')
+    return this.http.get<ranking[]>('https://csgoapi.herokuapp.com/ranking')
   }
 
   getStreams(): Observable<streams[]>{
-    return this.http.get<streams[]>('http://localhost:3000/streams')
+    return this.http.get<streams[]>('https://csgoapi.herokuapp.com/streams')
   }
 
   getMatch(id:number): Observable<match[]>{
-    return this.http.get<match[]>(`http://localhost:3000/match/${id}`)
+    return this.http.get<match[]>(`https://csgoapi.herokuapp.com/match/${id}`)
   }
 
   getTeam(id:number): Observable<team[]>{
-    return this.http.get<team[]>(`http://localhost:3000/team/${id}`)
+    return this.http.get<team[]>(`https://csgoapi.herokuapp.com/team/${id}`)
   }
   
 /*
