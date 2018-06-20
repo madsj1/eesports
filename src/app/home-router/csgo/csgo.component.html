@@ -1,6 +1,5 @@
 
-<div class="blocktest">
-    <div [ngClass]="router.url === '/csgo' ? 'imageCSnoA' : 'imageCS'" alt="cs:go | Eesports">
+    <div [ngClass]="router.url === '/csgo' ? 'imageCSnoA' : 'imageCS'" alt="cs:go | Eeports">
         <div *ngIf="router.url === '/csgo'" class="content">
             <div class="row" style="padding-top: 2%;">
                 
@@ -135,7 +134,7 @@
                                           {{post.team1.name}}
                                         </td>
                   
-                                        <td>VS</td>
+                                        <td style="position: relative; left: -8%;">VS</td>
                                     
                   
                                         <td class="team-logo">
@@ -179,5 +178,7 @@
 
         </div> <!--CONtENT-->
     </div>
+ 
+    
 
 <app-footer></app-footer>

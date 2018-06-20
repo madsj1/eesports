@@ -27,7 +27,7 @@
 }
 
 .textShrink {
-    font-size:10px;
+    font-size: 14px;
   }
 
   .resultScore{
@@ -64,4 +64,8 @@
 
   a{
       color:white;
+  }
+
+  .team-align{
+      float:left;
   }
