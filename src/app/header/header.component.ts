@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { AuthService } from '../shared/auth.service';
 
 @Component({
@@ -10,17 +10,30 @@ import { AuthService } from '../shared/auth.service';
 })
 export class HeaderComponent implements OnInit {
 info='';
-  constructor(public router:Router, private authService: AuthService) {
+showRoutes;
+
+
+
+
+  constructor(public router:Router, private authService: AuthService, private route: ActivatedRoute) {
     this.authService.user$.subscribe(info => {this.info = info})
   }
 
   
 
-  ngOnInit() {
-  }
+  ngOnInit() { 
+    this.route.params.subscribe((params)=>{ 
+    this.showRoutes= '/csgo/match/' +params['id'];
+    this.showRoutes = true;
+   });
+   }
+
 
   onLogout(){
     this.authService.Logout();
     this.router.navigate(['/']);
   }
+
+  
+  
 }

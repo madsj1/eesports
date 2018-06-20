@@ -3,58 +3,81 @@
         <a class="navbar-brand" *ngIf="router.url === '/'" routerLink="">
             <img class="logo" src="../../assets/logo.png">
         </a>
-        <a class="navbar-brand" *ngIf="router.url === '/csgo'" routerLink="">
-            <img class="logo" src="../../assets/logo.png">
-        </a>
-        <a class="navbar-brand" *ngIf="router.url === '/csgo/results'" routerLink="">
-            <img class="logo" src="../../assets/logo.png">
-        </a>
-        <a class="navbar-brand" *ngIf="router.url === '/csgo/ranking'" routerLink="">
-            <img class="logo" src="../../assets/logo.png">
-        </a>
+
         <a class="navbar-brand" *ngIf="router.url === '/dota'" routerLink="">
             <img class="logo" src="../../assets/logo.png">
         </a>
         <a class="navbar-brand" *ngIf="router.url === '/lol'" routerLink="">
             <img class="logo" src="../../assets/logo.png">
         </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
+                <ng-template [ngIf]="router.url === '/'">
+                    <a class="nav-item nav-link"routerLink="csgo">
+                        <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
+                    </a>
+                    <a class="nav-item nav-link"routerLink="dota">
+                        <img src="../../assets/Dota2_logo.png" width="60px" height="40px">
+                    </a>
+                        <a class="nav-item nav-link"routerLink="lol">
+                        <img src="../../assets/lol_logo.png" width="90px" height="40px">
+                    </a>
+                </ng-template>
 
-            <a class="nav-item nav-link" *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="csgo">
-                <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
-            </a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo/results">Results</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo/results">Results</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/ranking'" routerLink="csgo/results">Results</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/upcoming'" routerLink="csgo/results">Results</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/match/${id}'" routerLink="csgo/results">Results</a>
+                <ng-template [ngIf]="router.url === '/csgo'">
+                    <a class="navbar-brand" routerLink="">
+                        <img class="logo" src="../../assets/logo.png">
+                    </a>
+                    <a class="nav-item nav-link" routerLink="csgo/results">Results</a>
+                    <a class="nav-item nav-link" routerLink="csgo/ranking">World Ranking</a>
+                    <a class="nav-item nav-link" routerLink="csgo/upcoming">Upcoming</a>
+                </ng-template>
 
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo/ranking">World Ranking</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo/ranking">World Ranking</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/ranking'" routerLink="csgo/ranking">World Ranking</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/upcoming'" routerLink="csgo/ranking">World Ranking</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/match/${id}'" routerLink="csgo/match/">World Ranking</a>
-            
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo'" routerLink="csgo/upcoming">Upcoming</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/results'" routerLink="csgo/upcoming">Upcoming</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/ranking'" routerLink="csgo/upcoming">Upcoming</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/upcoming'" routerLink="csgo/upcoming">Upcoming</a>
-            <a class="nav-item nav-link" *ngIf="router.url === '/csgo/match/${id}'" routerLink="csgo/upcoming">Upcoming</a>
+               <ng-template [ngIf]="router.url === '/csgo/results'">
+                <a class="navbar-brand" routerLink="">
+                        <img class="logo" src="../../assets/logo.png">
+                    </a>
+                    <a class="nav-item nav-link" routerLink="csgo/results">Results</a>
+                    <a class="nav-item nav-link" routerLink="csgo/ranking">World Ranking</a>
+                    <a class="nav-item nav-link" routerLink="csgo/upcoming">Upcoming</a>
+                </ng-template>
+
+                <ng-template [ngIf]="router.url === '/csgo/ranking'">
+                    <a class="navbar-brand" routerLink="">
+                            <img class="logo" src="../../assets/logo.png">
+                        </a>
+                    <a class="nav-item nav-link" routerLink="csgo/results">Results</a>
+                    <a class="nav-item nav-link" routerLink="csgo/ranking">World Ranking</a>
+                    <a class="nav-item nav-link" routerLink="csgo/upcoming">Upcoming</a>
+                </ng-template>
+
+                <ng-template [ngIf]="router.url === '/csgo/upcoming'">
+                    <a class="navbar-brand" routerLink="">
+                            <img class="logo" src="../../assets/logo.png">
+                        </a>
+                    <a class="nav-item nav-link" routerLink="csgo/results">Results</a>
+                    <a class="nav-item nav-link" routerLink="csgo/ranking">World Ranking</a>
+                    <a class="nav-item nav-link" routerLink="csgo/upcoming">Upcoming</a>
+                </ng-template>
+
+                <ng-template [ngIf]="showRoutes">
+                    <a class="navbar-brand" routerLink="">
+                            <img class="logo" src="../../assets/logo.png">
+                        </a>
+                    <a class="nav-item nav-link" routerLink="csgo/results">Results</a>
+                    <a class="nav-item nav-link" routerLink="csgo/ranking">World Ranking</a>
+                    <a class="nav-item nav-link" routerLink="csgo/upcoming">Upcoming</a>
+                </ng-template> 
+
+             
+      
 
 
-            <a class="nav-item nav-link" *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="dota">
-                <img src="../../assets/Dota2_logo.png" width="60px" height="40px">
-            </a>
-
-
-            <a class="nav-item nav-link" *ngIf="router.url === '/'" routerLinkActive="activeSelected" routerLink="lol">
-                <img src="../../assets/lol_logo.png" width="90px" height="40px">
-            </a>
             <ul class="navbar-nav ml-auto">
 
                 <ng-template [ngIf]="!authService.isAuthenticated()">

@@ -5,9 +5,10 @@
   <div class="box-holder">
     <div class="row">
       <div class="col-md-4 col-xs-12 align-items">
-        <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1.id}}" height="100" width="100" class="logo" alt="{{ _postArrayMatch?.team1.name}}">
+        <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1.id}}" height="100" width="100" class="logo"
+          alt="{{ _postArrayMatch?.team1.name}}">
         <p>{{ _postArrayMatch?.team1.name }}</p>
-<!-- 
+        <!-- 
         <div *ngIf="_postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3' || _postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3 (LAN)'">
           <p style="color:red;">0</p>
         </div>
@@ -16,7 +17,7 @@
         </div> -->
 
         <div *ngIf="_postArrayMatch && _postArrayMatch['winnerTeam']">
-        <div *ngIf="_postArrayMatch?.team1.name == _postArrayMatch?.winnerTeam.name">
+          <div *ngIf="_postArrayMatch?.team1.name == _postArrayMatch?.winnerTeam.name">
             <p style="color:green;">WIN</p>
           </div>
           <div *ngIf="_postArrayMatch?.team1.name != _postArrayMatch?.winnerTeam.name">
@@ -25,7 +26,7 @@
         </div>
 
 
-      <!--   <div *ngIf="_postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
+        <!--   <div *ngIf="_postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team1.name == _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
           <p style="color:green;">WIN</p>
         </div>
         <div *ngIf="_postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3' || _postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format == 'Best of 3 (LAN)'">
@@ -43,17 +44,20 @@
         <p style="font-size:11px;">{{ _postArrayMatch?.date | date:mediumDate }}
           <Br> {{ _postArrayMatch?.date | date:'shortTime' }}</p>
         <p>{{ _postArrayMatch?.format }}</p>
-        <p *ngIf="_postArrayMatch?.live == false">Match over</p>
+        <div *ngIf="_postArrayMatch && _postArrayMatch['winnerTeam']">
+          <p *ngIf="_postArrayMatch?.live == false">Match over</p>
+        </div>
         <p *ngIf="_postArrayMatch?.live == true">Live</p>
       </div>
 
       <div class="col-md-4 col-xs-12 align-items">
-        <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2.id}}" height="100" width="100" class="logo" alt="{{ _postArrayMatch?.team2.name}}">
+        <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2.id}}" height="100" width="100" class="logo"
+          alt="{{ _postArrayMatch?.team2.name}}">
         <p>{{ _postArrayMatch?.team2.name}}</p>
 
 
 
-      <!--   <div *ngIf="_postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3' || _postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3 (LAN)'">
+        <!--   <div *ngIf="_postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3' || _postArrayMatch.team2.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3 (LAN)'">
           <p style="color:red;">0</p>
         </div>
         <div *ngIf="_postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name  && _postArrayMatch.format == 'Best of 1' || _postArrayMatch.team2.name == _postArrayMatch.winnerTeam.name  && _postArrayMatch.format == 'Best of 1 (Online)'">
@@ -98,8 +102,7 @@
         <div class="col-md-12" *ngSwitchCase="'nuke'">
           <div class="card text-white bg-dark mb-3 d-inline-block">
             <div class="card-body"> Nuke </div>
-            <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/nuke.jpg" alt="Nuke" height="100px"
-             width="270px">
+            <img [ngClass]="{mapNotplayed:map.result === ''}" src="../../../../assets/csgo_maps/nuke.jpg" alt="Nuke" height="100px" width="270px">
             <p class="resultInfo">{{ map.result | slice:0:-5}}</p>
           </div>
 
@@ -149,7 +152,6 @@
               width="270px">
             <p class="resultInfo">{{ map.result | slice:0:-5}}</p>
           </div>
-
         </div>
 
 
@@ -160,65 +162,76 @@
               width="270px">
             <p class="resultInfo">{{ map.result| slice:0:-5 }}</p>
           </div>
-
         </div>
 
-
+        <div class="col-md-12" *ngSwitchCase="'tba'">
+            <div class="card text-white bg-dark mb-3 d-inline-block">
+              <div class="card-body"> To be announced </div>
+              <img  src="../../../../assets/csgo_maps/tba.png" alt="TBA" height="100px" width="270px">
+            </div>
+          </div>
 
       </div>
+
+
+
     </div>
     <!-- row -->
   </div>
   <!-- box holder -->
 
-    <div class="headline">
-        <p style="margin-top: 1.4%;
+  <div class="headline">
+    <p style="margin-top: 1.4%;
         font-size: 24px;">Lineups</p>
+  </div>
+
+  <div class="box-holder-lineup">
+
+    <div class="row players">
+      <div class="col-md-2 moveCenter" *ngFor="let playerTM1 of _postArrayMatch?.players.team1">
+        <img class="border" src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM1.id}}/400.jpeg?v=4" height="100px"
+          width="100px;">
+        <p class="playerName">{{playerTM1.name}}</p>
       </div>
+      <img style="margin-right: 5%;
+        margin-top: 3%;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1.id}}" height="70" width="70"
+        class="logo" alt="{{ _postArrayMatch?.team1.name}}">
+    </div>
+  </div>
 
-      <div class="box-holder-lineup">
-          
-        <div class="row players">
-        <div class="col-md-2 moveCenter" *ngFor="let playerTM1 of _postArrayMatch?.players.team1">
-          <img class="border" src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM1.id}}/400.jpeg?v=4" height="100px" width="100px;">
-          <p class="playerName">{{playerTM1.name}}</p>
-        </div>
-        <img style="margin-right: 5%;
-        margin-top: 3%;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1.id}}" height="70" width="70" class="logo" alt="{{ _postArrayMatch?.team1.name}}">
+  <div class="box-holder-lineup">
+    <div class="row players">
+      <div class="col-md-2 moveCenter" *ngFor="let playerTM2 of _postArrayMatch?.players.team2">
+        <img class="border" src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM2.id}}/400.jpeg?v=4" alt="{{playerTM2.name}}"
+          height="100px" width="100px;">
+        <p class="playerName">{{playerTM2.name}}</p>
       </div>
-    </div>
-
-<div class="box-holder-lineup">
-      <div class="row players">
-          <div class="col-md-2 moveCenter" *ngFor="let playerTM2 of _postArrayMatch?.players.team2">
-            <img class="border" src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM2.id}}/400.jpeg?v=4" alt="{{playerTM2.name}}" height="100px" width="100px;">
-            <p class="playerName">{{playerTM2.name}}</p>
-          </div>
-          <img style="margin-right: 5%;
-          margin-top: 3%;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2.id}}" height="70" width="70" class="logo" alt="{{ _postArrayMatch?.team2.name}}">
-        </div>
-
-      </div>
-
-    <div class="headline" *ngIf="_postArrayMatch?.highlights != ''">
-      <p style="margin-top: -3.6%;
-      font-size: 24px;">Highlights</p>
-    </div>
-
-
-  <div class="holder">
-     <div class="row">
-    <div class="col-md-2" *ngFor="let highlight of _postArrayMatch?.highlights">
-        <a style="color:white" href={{highlight.link}} target="_blank">
-      <div class="highlight-box" >
-      <p style="font-size: 12px;">
-        {{highlight.title}}
-      </p>
-    </div>
-    </a>
+      <img style="margin-right: 5%;
+          margin-top: 3%;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2.id}}" height="70" width="70"
+        class="logo" alt="{{ _postArrayMatch?.team2.name}}">
     </div>
 
   </div>
+
+  <div class="headline" *ngIf="_postArrayMatch?.highlights != ''">
+    <p style="margin-top: -3.6%;
+      font-size: 24px;">Highlights</p>
+  </div>
+
+
+  <div class="holder">
+    <div class="row">
+      <div class="col-md-2" *ngFor="let highlight of _postArrayMatch?.highlights">
+        <a style="color:white" href={{highlight.link}} target="_blank">
+          <div class="highlight-box">
+            <p style="font-size: 12px;">
+              {{highlight.title}}
+            </p>
+          </div>
+        </a>
+      </div>
+
+    </div>
 
   </div>
 
