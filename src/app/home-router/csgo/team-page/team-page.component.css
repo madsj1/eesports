@@ -72,3 +72,9 @@
     margin-left: 1.6%;
     background-position: 0px -164px;
 }
+.app-team-page.ng-star-inserted{
+    position: relative !important;
+}
+.blocktest{
+    position: relative !important;
+}
