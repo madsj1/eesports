@@ -4,19 +4,12 @@
             <img class="logo" src="../../assets/logo.png">
         </a>
 
-        <a class="navbar-brand" *ngIf="router.url === '/dota'" routerLink="">
-            <img class="logo" src="../../assets/logo.png">
-        </a>
-        <a class="navbar-brand" *ngIf="router.url === '/lol'" routerLink="">
-            <img class="logo" src="../../assets/logo.png">
-        </a>
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ng-container *ngIf="router.url!='/csgo' && router.url!='/csgo/results' && router.url!='/csgo/ranking' && router.url!='/csgo/upcoming'">
+            <ng-container *ngIf="router.url!='/csgo' && router.url!='/csgo/results' && router.url!='/csgo/ranking' && router.url!='/csgo/upcoming' && router.url!='/dota' && router.url!='/lol'">
             <ng-template [ngIf]="router.url === '/'">
                 <a class="nav-item nav-link"routerLink="csgo">
                     <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
