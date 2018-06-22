@@ -102,9 +102,14 @@
                 <i style="font-size:40px;" class="fas fa-th-large"></i>
                 <p>Games</p>
             </a>
-
+            <ng-template [ngIf]="showRoutes && router.url!='/'">
+                <a class="nav-item nav-link centerIt" routerLink="csgo">
+                    <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
+                    <p>CSGO</p>
+                </a>
+            </ng-template>
         </div>
-        <div class="sideBox" *ngIf="router.url === '/csgo'">
+        <!-- <div class="sideBox" *ngIf="router.url === '/csgo'">
             <a class="nav-item nav-link centerIt" routerLink="csgo">
                 <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
                 <div class="sideBoxclick"></div>
@@ -134,7 +139,7 @@
                 <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
                 <div class="sideBoxclick"></div>
             </a>
-        </div>
+        </div> -->
 
         <div class="sideBox" *ngIf="router.url === '/dota'">
             <a class="nav-item nav-link centerIt" routerLink="dota">
