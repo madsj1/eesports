@@ -131,9 +131,9 @@ export interface team{
 export class MatchService {
   constructor(private http: HttpClient) {}  
 
-  getAllNews(): Observable<news[]>{
+/*   getAllNews(): Observable<news[]>{
     return this.http.get<news[]>('https://csgoapi.herokuapp.com/')
-  }
+  } */
 
   getAllMatches(): Observable<matches[]>{
     return this.http.get<matches[]>('https://csgoapi.herokuapp.com/matches')
