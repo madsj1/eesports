@@ -6,13 +6,13 @@
           <div>
             <div class="row bottom">
               <div class="col-1 logo">
-                <img src="{{ _postArrayTeam.logo}}" height="100" width="100" class="logo" alt="{{ _postArrayTeam.name}}">
+                <img src="{{ _postArrayTeam?.logo}}" height="100" width="100" class="logo" alt="{{ _postArrayTeam?.name}}">
               </div>
               <div style="color: #0ca2cf;" class="col-md-4 offset-md-1 align">
-                World ranking #{{_postArrayTeam.rank}}
+                World ranking #{{_postArrayTeam?.rank}}
                 <br>
-                {{_postArrayTeam.location}}
-                <h1>{{ _postArrayTeam.name }}</h1>
+                {{_postArrayTeam?.location}}
+                <h1>{{ _postArrayTeam?.name }}</h1>
               </div>
             </div>
           </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="coverImage1">
             </div>
-            <div *ngFor="let post of _postArrayTeam.players">
+            <div *ngFor="let post of _postArrayTeam?.players">
               <div class="col" style="text-align: center; color:#0ca2cf;">
                 <img id="player" style="width: 14.4vw;" src="https://static.hltv.org//images/playerprofile/bodyshot/compressed/{{post.id}}.png">
               </div>
@@ -36,13 +36,13 @@
             </div>
           </div>
           <div style="text-align: right;">
-            <a href="{{_postArrayTeam.twitter}}">
+            <a href="{{_postArrayTeam?.twitter}}">
               <span class="fa-stack fa-2x">
                   <i class="fas fa-square fa-stack-2x"></i>
                   <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
               </span>
             </a>
-            <a href="{{_postArrayTeam.facebook}}">
+            <a href="{{_postArrayTeam?.facebook}}">
               <span class="fa-stack fa-2x">
                   <i class="fas facebook fa-square fa-stack-2x fa-inverse"></i>
                   <i class="fab fa-facebook fa-stack-1x "></i>
@@ -56,29 +56,29 @@
             <table class="table  table-hover table-dark text-center">
                 <thead>
                     <tr class="text-center">
-                        <th scope="col" colspan="7" style="color: #80aad4;">Recent results for {{_postArrayTeam.name}}</th>
+                        <th scope="col" colspan="7" style="color: #80aad4;">Recent results for {{_postArrayTeam?.name}}</th>
                     </tr>
-                    <tr *ngFor="let post of _postArrayTeam.recentResults" (click)="selectId(post.matchID)" style="cursor: pointer;">
+                    <tr *ngFor="let post of _postArrayTeam?.recentResults" (click)="selectId(post.matchID)" style="cursor: pointer;">
                       <td>
-                        <p style="float: right;">{{_postArrayTeam.name}}</p>
+                        <p style="float: right;">{{_postArrayTeam?.name}}</p>
                       </td>
                       <td style="width:10%">
-                        <img width="40px" src="{{_postArrayTeam.logo}}">
+                        <img width="40px" src="{{_postArrayTeam?.logo}}">
                       </td>
                       <td style="width: 10%">
                         <p>{{post.result}}</p>
                       </td>
                       <td style="width: 10%">
-                        <img width="40px" src="https://static.hltv.org/images/team/logo/{{post.enemyTeam.id}}">
+                        <img width="40px" src="https://static.hltv.org/images/team/logo/{{post.enemyTeam?.id}}">
                       </td>
                       <td>
-                        <p style="float: left;">{{post.enemyTeam.name}}</p>
+                        <p style="float: left;">{{post.enemyTeam?.name}}</p>
                       </td>
                       <td>
-                        <img width="40px" style="float: right;" src="https://static.hltv.org/images/eventLogos/{{post.event.id}}.png">
+                        <img width="40px" style="float: right;" src="https://static.hltv.org/images/eventLogos/{{post.event?.id}}.png">
                       </td>
                       <td style="width: 20%">
-                        <p>{{post.event.name}}</p>
+                        <p>{{post.event?.name}}</p>
                       </td>
                       <input id="matchId" type="hidden" value="{{post.matchID}}">
                     </tr>
@@ -93,7 +93,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let post of _postArrayTeam.bigAchievements">
+                <tr *ngFor="let post of _postArrayTeam?.bigAchievements">
                   <td>
                     <div [ngStyle]="{'color':post.place === 'Group stage' ? 'white' : 'white'}" *ngIf="post.place == 'Group stage'"><i class="fa fa-trophy black"></i></div>
                     <div [ngStyle]="{'color':post.place === '1st' ? 'gold' : 'gold'}" *ngIf="post.place == '1st'"><i class="fa fa-trophy gold"></i></div>

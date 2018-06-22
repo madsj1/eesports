@@ -5,9 +5,9 @@
   <div class="box-holder">
     <div class="row">
       <div class="col-md-4 col-xs-12 align-items">
-        <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1.id}}" height="100" width="100" class="logo"
-          alt="{{ _postArrayMatch?.team1.name}}">
-        <p>{{ _postArrayMatch?.team1.name }}</p>
+        <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1?.id}}" height="100" width="100" class="logo"
+          alt="{{ _postArrayMatch?.team1?.name}}">
+        <p>{{ _postArrayMatch?.team1?.name }}</p>
         <!-- 
         <div *ngIf="_postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3' || _postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3 (LAN)'">
           <p style="color:red;">0</p>
@@ -51,9 +51,9 @@
       </div>
 
       <div class="col-md-4 col-xs-12 align-items">
-        <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2.id}}" height="100" width="100" class="logo"
-          alt="{{ _postArrayMatch?.team2.name}}">
-        <p>{{ _postArrayMatch?.team2.name}}</p>
+        <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2?.id}}" height="100" width="100" class="logo"
+          alt="{{ _postArrayMatch?.team2?.name}}">
+        <p>{{ _postArrayMatch?.team2?.name}}</p>
 
 
 
@@ -188,27 +188,27 @@
   <div class="box-holder-lineup">
 
     <div class="row players">
-      <div class="col-md-2 moveCenter" *ngFor="let playerTM1 of _postArrayMatch?.players.team1">
+      <div class="col-md-2 moveCenter" *ngFor="let playerTM1 of _postArrayMatch?.players?.team1">
         <img class="border" src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM1.id}}/400.jpeg?v=4" height="100px"
           width="100px;">
         <p class="playerName">{{playerTM1.name}}</p>
       </div>
       <img style="margin-right: 5%;
-        margin-top: 3%;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1.id}}" height="70" width="70"
-        class="logo" alt="{{ _postArrayMatch?.team1.name}}">
+        margin-top: 3%;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1?.id}}" height="70" width="70"
+        class="logo" alt="{{ _postArrayMatch?.team1?.name}}">
     </div>
   </div>
 
   <div class="box-holder-lineup">
     <div class="row players">
-      <div class="col-md-2 moveCenter" *ngFor="let playerTM2 of _postArrayMatch?.players.team2">
+      <div class="col-md-2 moveCenter" *ngFor="let playerTM2 of _postArrayMatch?.players?.team2">
         <img class="border" src="https://static.hltv.org/images/playerprofile/thumb/{{playerTM2.id}}/400.jpeg?v=4" alt="{{playerTM2.name}}"
           height="100px" width="100px;">
         <p class="playerName">{{playerTM2.name}}</p>
       </div>
       <img style="margin-right: 5%;
-          margin-top: 3%;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2.id}}" height="70" width="70"
-        class="logo" alt="{{ _postArrayMatch?.team2.name}}">
+          margin-top: 3%;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2?.id}}" height="70" width="70"
+        class="logo" alt="{{ _postArrayMatch?.team2?.name}}">
     </div>
 
   </div>
