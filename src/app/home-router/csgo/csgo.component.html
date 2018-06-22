@@ -15,7 +15,7 @@
                                                     <div class="textShrink">{{post.team1.name}}</div>
                                                 </div>
                                         </td>
-                                        <td><img src="https://static.hltv.org/images/team/logo/{{post.team1?.id}}" width="20x" height="20px" alt="{{post.team1?.name}}"></td>
+                                        <td><img src="https://static.hltv.org/images/team/logo/{{post.team1.id}}" width="20x" height="20px" alt="{{post.team1.name}}"></td>
                                         <td class="resultScore">
                                                 <!-- <span  [ngStyle]="{'color':post.result |  >= 16 ? 'green' : 'red'}">{{post.result | slice:0:2}}</span> -->
                                             <span  [ngStyle]="">{{post.result | slice:0:2}}</span> -
@@ -27,9 +27,9 @@
                                                      <div class="textShrink">{{post.team2.name}}</div>
                                                 </div>
                                         </td>
-                                        <td> <img src="https://static.hltv.org/images/team/logo/{{post.team2?.id}}" width="20px" height="20px" alt="{{post.team2?.name}}"></td>
+                                        <td> <img src="https://static.hltv.org/images/team/logo/{{post.team2.id}}" width="20px" height="20px" alt="{{post.team2.name}}"></td>
                                     
-                                        <input id="matchId" type="hidden" value="{{post?.id}}">
+                                        <input id="matchId" type="hidden" value="{{post.id}}">
                                         </ng-template>
                                     </tr>
                                 </tbody>
@@ -56,7 +56,7 @@
                         <table class="table  table-hover table-dark text-center">
                                 <tbody>
                             
-                                  <tr *ngFor="let post of _postArrayRanking; let i = index" (click)="selectTeamId(post.team?.id)" style="cursor: pointer;">
+                                  <tr *ngFor="let post of _postArrayRanking; let i = index" (click)="selectTeamId(post.team.id)" style="cursor: pointer;">
                                     <ng-template [ngIf]="i<5">
                                       <td class="placement">
                                    <div [ngStyle]="{'color':post.place === '1' ? 'gold' : 'gold'}" *ngIf="post.place == '1'"><i class="fa fa-trophy gold"></i></div>
@@ -64,7 +64,7 @@
                                    <div [ngStyle]="{'color':post.place === '3' ? '#CD7F32' : '#CD7F32'}" *ngIf="post.place == '3'"><i class="fa fa-trophy gold"></i></div>    {{post.place}}
                                       </td>
                                       <td class="team-logo">
-                                          <img src="https://static.hltv.org/images/team/logo/{{post.team?.id}}" width="30px" height="30px" alt="{{post.team?.name}}">
+                                          <img src="https://static.hltv.org/images/team/logo/{{post.team.id}}" width="30px" height="30px" alt="{{post.team.name}}">
                                       </td>
                                       <td class="team-align">
                                         {{post.team.name}}
@@ -92,7 +92,7 @@
                                             {{post.date | date:'shortTime' }}
                                         </td>
                                         <td class="team-logo">
-                                            <img src="https://static.hltv.org/images/team/logo/{{post?.team1.id}}" width="30px" height="30px" alt="{{post?.team1.name}}">
+                                            <img src="https://static.hltv.org/images/team/logo/{{post.team1.id}}" width="30px" height="30px" alt="{{post.team1.name}}">
                                         </td>
                                         <td class="team-align">
                                           {{post.team1.name}}
@@ -102,7 +102,7 @@
                                     
                   
                                         <td class="team-logo">
-                                            <img src="https://static.hltv.org/images/team/logo/{{post?.team2.id}}" width="30px" height="30px" alt="{{post?.team2.name}}">
+                                            <img src="https://static.hltv.org/images/team/logo/{{post.team2.id}}" width="30px" height="30px" alt="{{post.team2.name}}">
                                         </td>
                                         <td class="team-align">
                                           {{post.team2.name}}
@@ -128,17 +128,17 @@
                                             {{post.date | date:'shortTime' }}
                                         </td>
                                         <td class="team-logo">
-                                            <img src="https://static.hltv.org/images/team/logo/{{post?.team1.id}}" width="30px" height="30px" alt="{{post?.team1.name}}">
+                                            <img src="https://static.hltv.org/images/team/logo/{{post.team1?.id}}" width="30px" height="30px" alt="{{post.team1?.name}}">
                                         </td>
                                         <td class="team-align">
                                           {{post.team1.name}}
                                         </td>
                   
-                                        <td>VS</td>
+                                        <td style="position: relative; left: -8%;">VS</td>
                                     
                   
                                         <td class="team-logo">
-                                            <img src="https://static.hltv.org/images/team/logo/{{post?.team2.id}}" width="30px" height="30px" alt="{{post?.team2.name}}">
+                                            <img src="https://static.hltv.org/images/team/logo/{{post.team2.id}}" width="30px" height="30px" alt="{{post.team2.name}}">
                                         </td>
                                         <td class="team-align">
                                           {{post.team2.name}}
@@ -157,19 +157,19 @@
                         
 
                         <table class="table table-hover table-dark">
-                                <tbody>
-                                  <tr *ngFor="let post of _postArrayStreams; let i = index">
-                                    <ng-template [ngIf]="i<8">
-                                        <a href="https://www.hltv.org/{{post.hltvLink}}" target="_blank">
-                                    <td><img alt="{{post.country.name}}" src="https://static.hltv.org/images/bigflags/30x20/{{post?.country.code}}.gif" class="flag" title="{{post?.country.name}}"></td>
-                                    <td>{{post.name}}</td>
-                                    <td>{{post.viewers}}</td>
-                                </a>
-                                    </ng-template>
-                                  </tr>
-                               
-                                </tbody>
-                              </table>
+                            <tbody>
+                                <tr *ngFor="let post of _postArrayStreams; let i = index">
+                                <ng-template [ngIf]="i<8">
+                                    <a href="https://www.hltv.org/{{post.hltvLink}}" target="_blank">
+                                        <td><img alt="{{post.country.name}}" src="https://static.hltv.org/images/bigflags/30x20/{{post.country.code}}.gif" class="flag" title="{{post.country.name}}"></td>
+                                        <td>{{post.name}}</td>
+                                        <td>{{post.viewers}}</td>
+                                    </a>
+                                </ng-template>
+                                </tr>
+                            
+                            </tbody>
+                        </table>
                       
                     </div>
                 
