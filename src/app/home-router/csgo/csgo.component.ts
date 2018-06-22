@@ -24,12 +24,12 @@ export class CsgoComponent implements OnInit {
     
   }
 
-  getNews(): void {
+/*   getNews(): void {
     this.matchService.getAllNews().subscribe(
       resultArray => this._postArray = resultArray,
       error => console.log("Error :: " + error)
     )
-  }
+  } */
   getMatches(): void {
     this.matchService.getAllMatches().subscribe(
       resultArray => this._postArrayMatches = resultArray,
@@ -68,7 +68,7 @@ export class CsgoComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getNews();
+   /*  this.getNews(); */
     this.getStreams();
     this.getResults();
     this.getRanking();
