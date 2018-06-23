@@ -10,6 +10,7 @@ import { MatchService, match, team } from '../cs.service';
 export class TeamPageComponent implements OnInit {
   _postArrayTeam: team[];
   _postArrayMatch: match[];
+  pic: string;
   constructor(public router:Router, private matchService: MatchService, private route: ActivatedRoute) { 
     
   }
@@ -25,7 +26,9 @@ export class TeamPageComponent implements OnInit {
     })
    }
 
-
+   setDefaultPic(id){
+    return this.pic = "https://static.hltv.org/images/playerprofile/thumb/"+id+"/400.jpeg?v=2"
+   }
 
    selectId(id){
     this.router.navigate(['/csgo/match', id]);

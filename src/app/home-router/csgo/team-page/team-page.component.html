@@ -26,7 +26,7 @@
             </div>
             <div *ngFor="let post of _postArrayTeam?.players">
               <div class="col" style="text-align: center; color:#0ca2cf;">
-                <img id="player" style="width: 14.4vw;" src="https://static.hltv.org//images/playerprofile/bodyshot/compressed/{{post.id}}.png">
+                <img id="player" style="width: 14.4vw;" [src]="https://static.hltv.org//images/playerprofile/bodyshot/compressed/"+id+".png" (error)="setDefaultPic(id:id)">
               </div>
               <div class="col">
                 <p style="text-align: center; color:white">
