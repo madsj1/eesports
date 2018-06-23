@@ -10,7 +10,7 @@ import { MatchService, match, team } from '../cs.service';
 export class TeamPageComponent implements OnInit {
   _postArrayTeam: team[];
   _postArrayMatch: match[];
-  pic: string;
+  pic;
   constructor(public router:Router, private matchService: MatchService, private route: ActivatedRoute) { 
     
   }
@@ -26,8 +26,9 @@ export class TeamPageComponent implements OnInit {
     })
    }
 
-   setDefaultPic(id){
-    return this.pic = "https://static.hltv.org/images/playerprofile/thumb/"+id+"/400.jpeg?v=2"
+
+   changeImage(event, id:number){
+    event.target.src = "https://static.hltv.org/images/playerprofile/thumb/"+id+"/400.jpeg?v=2";
    }
 
    selectId(id){
