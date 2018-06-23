@@ -3,6 +3,12 @@
         <a class="navbar-brand" *ngIf="router.url === '/'" routerLink="">
             <img class="logo" src="../../assets/logo.png">
         </a>
+        <a class="navbar-brand" *ngIf="router.url === '/dota'" routerLink="">
+            <img class="logo" src="../../assets/logo.png">
+        </a>
+        <a class="navbar-brand" *ngIf="router.url === '/lol'" routerLink="">
+            <img class="logo" src="../../assets/logo.png">
+        </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +64,7 @@
                 <a class="nav-item nav-link" routerLink="csgo/upcoming">Upcoming/Live</a>
             </ng-template>
             </ng-container>
-                <ng-template [ngIf]="showRoutes && router.url!='/'">
+                <ng-template [ngIf]="showRoutes && router.url!='/' && router.url!='/lol' && router.url!='/dota'">
                     <a class="navbar-brand" routerLink="">
                             <img class="logo" src="../../assets/logo.png">
                         </a>
@@ -102,44 +108,15 @@
                 <i style="font-size:40px;" class="fas fa-th-large"></i>
                 <p>Games</p>
             </a>
-            <ng-template [ngIf]="showRoutes && router.url!='/'">
+        </div>
+        <ng-template [ngIf]="showRoutes && router.url!='/' && router.url!='/dota' && router.url!='/lol'">
+            <div class="sideBox">
                 <a class="nav-item nav-link centerIt" routerLink="csgo">
-                    <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
-                    <p>CSGO</p>
+                    <img src="../../assets/CSGO_logo.png" width="40px" height="50px">
+                    <div class="sideBoxclick"></div>
                 </a>
-            </ng-template>
-        </div>
-        <!-- <div class="sideBox" *ngIf="router.url === '/csgo'">
-            <a class="nav-item nav-link centerIt" routerLink="csgo">
-                <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
-                <div class="sideBoxclick"></div>
-            </a>
-        </div>
-
-        <div class="sideBox" *ngIf="router.url === '/csgo/results'">
-            <a class="nav-item nav-link centerIt" routerLink="csgo">
-                <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
-                <div class="sideBoxclick"></div>
-            </a>
-        </div>
-        <div class="sideBox" *ngIf="router.url === '/csgo/ranking'">
-            <a class="nav-item nav-link centerIt" routerLink="csgo">
-                <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
-                <div class="sideBoxclick"></div>
-            </a>
-        </div>
-        <div class="sideBox" *ngIf="router.url === '/csgo/match'">
-            <a class="nav-item nav-link centerIt" routerLink="csgo">
-                <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
-                <div class="sideBoxclick"></div>
-            </a>
-        </div>
-        <div class="sideBox" *ngIf="router.url === '/csgo/upcoming'">
-            <a class="nav-item nav-link centerIt" routerLink="csgo">
-                <img src="../../assets/CSGO_logo.png" width="40px" height="40px">
-                <div class="sideBoxclick"></div>
-            </a>
-        </div> -->
+            </div>
+        </ng-template>
 
         <div class="sideBox" *ngIf="router.url === '/dota'">
             <a class="nav-item nav-link centerIt" routerLink="dota">
