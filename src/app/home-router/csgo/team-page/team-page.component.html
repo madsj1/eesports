@@ -27,7 +27,6 @@
             <div *ngFor="let post of _postArrayTeam?.players">
               <div class="col" style="text-align: center; color:#0ca2cf;">
                 <img id="player" style="width: 14.4vw;" [src]="'https://static.hltv.org/images/playerprofile/bodyshot/compressed/' + post. id + '.png'" (error)="changeImage($event ,post.id)">
-               <p style="text-align: center; color:white">{{post.id}}</p>
               </div>
               <div class="col">
                 <p style="text-align: center; color:white">
