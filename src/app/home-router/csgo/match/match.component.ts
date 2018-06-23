@@ -28,7 +28,10 @@ export class MatchComponent implements OnInit {
       )
     })
    }
-
+   
+   selectId(id){
+    this.router.navigate(['/csgo/team', id]);
+  }
  
 
 }

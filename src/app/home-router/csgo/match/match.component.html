@@ -5,8 +5,8 @@
   <div class="box-holder">
     <div class="row">
       <div class="col-md-4 col-xs-12 align-items">
-        <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1?.id}}" height="100" width="100" class="logo"
-          alt="{{ _postArrayMatch?.team1?.name}}">
+        <img style="cursor: pointer;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1?.id}}" height="100" width="100" class="logo"
+          alt="{{ _postArrayMatch?.team1?.name}}" (click)="selectId(_postArrayMatch?.team1.id)">
         <p>{{ _postArrayMatch?.team1?.name }}</p>
         <!-- 
         <div *ngIf="_postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3' || _postArrayMatch.team1.name != _postArrayMatch.winnerTeam.name && _postArrayMatch.format != 'Best of 3 (LAN)'">
@@ -51,8 +51,8 @@
       </div>
 
       <div class="col-md-4 col-xs-12 align-items">
-        <img src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2?.id}}" height="100" width="100" class="logo"
-          alt="{{ _postArrayMatch?.team2?.name}}">
+        <img style="cursor: pointer;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2?.id}}" height="100" width="100" class="logo"
+          alt="{{ _postArrayMatch?.team2?.name}}" (click)="selectId(_postArrayMatch?.team2?.id)">
         <p>{{ _postArrayMatch?.team2?.name}}</p>
 
 
@@ -194,8 +194,8 @@
         <p class="playerName">{{playerTM1.name}}</p>
       </div>
       <img style="margin-right: 5%;
-        margin-top: 3%;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1?.id}}" height="70" width="70"
-        class="logo" alt="{{ _postArrayMatch?.team1?.name}}">
+        margin-top: 3%; cursor: pointer;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team1?.id}}" height="70" width="70"
+        class="logo" alt="{{ _postArrayMatch?.team1?.name}}" (click)="selectId(_postArrayMatch?.team1?.id)">
     </div>
   </div>
 
@@ -207,8 +207,8 @@
         <p class="playerName">{{playerTM2.name}}</p>
       </div>
       <img style="margin-right: 5%;
-          margin-top: 3%;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2?.id}}" height="70" width="70"
-        class="logo" alt="{{ _postArrayMatch?.team2?.name}}">
+          margin-top: 3%; cursor: pointer;" src="https://static.hltv.org/images/team/logo/{{ _postArrayMatch?.team2?.id}}" height="70" width="70"
+        class="logo" alt="{{ _postArrayMatch?.team2?.name}}" (click)="selectId(_postArrayMatch?.team2?.id)">
     </div>
 
   </div>
