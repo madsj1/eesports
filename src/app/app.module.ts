@@ -40,6 +40,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { environment } from '../environments/environment';
 import { UsersService } from './shared/users.service';
+import { NotfoundComponent } from './notfound404/notfund.component';
 
 
 
@@ -59,7 +60,8 @@ import { UsersService } from './shared/users.service';
     MatchComponent,
     RankingComponent,
     TeamPageComponent,
-    UpcomingLiveComponent
+    UpcomingLiveComponent,
+    NotfoundComponent
  
    
   ],

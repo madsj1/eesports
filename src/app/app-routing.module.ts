@@ -14,6 +14,7 @@ import { MatchComponent } from './home-router/csgo/match/match.component';
 import { RankingComponent } from './home-router/csgo/ranking/ranking.component';
 import { TeamPageComponent } from './home-router/csgo/team-page/team-page.component';
 import { UpcomingLiveComponent } from './home-router/csgo/upcoming-live/upcoming-live';
+import { NotfoundComponent } from './notfound404/notfund.component';
 
 
 export const routes: Routes = [
@@ -25,6 +26,8 @@ export const routes: Routes = [
   { path: 'csgo/match/:id', component:MatchComponent},
   { path: 'csgo/team/:id', component: TeamPageComponent},
   { path: 'csgo/upcoming', component:UpcomingLiveComponent},
+  {path: '404', component: NotfoundComponent},
+  {path: '**', redirectTo: '/404'},
   /*   children: [
       { path: 'results', component: CsResultsComponent }
     ]
