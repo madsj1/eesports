@@ -27,7 +27,7 @@ export const routes: Routes = [
   { path: 'csgo/team/:id', component: TeamPageComponent},
   { path: 'csgo/upcoming', component:UpcomingLiveComponent},
   {path: '404', component: NotfoundComponent},
-  {path: '**', redirectTo: '/404'},
+
   /*   children: [
       { path: 'results', component: CsResultsComponent }
     ]
@@ -36,7 +36,8 @@ export const routes: Routes = [
   { path: 'lol', component: LolComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'profile', component: UserprofileComponent, canActivate: [AuthBlock] }
+  { path: 'profile', component: UserprofileComponent, canActivate: [AuthBlock] },
+  {path: '**', redirectTo: '/404'}
   /* EXAMPLE TO DISABLE ACCESS TO THIS PAGE  { path: 'lol', component: LolComponent, canActivate: [AuthBlock] }, */
 ];
 
